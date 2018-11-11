@@ -1,16 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   corewar.h                                          :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: Gufortel <gufortel@student.42.fr>          +#+  +:+       +#+        */
+/*   By: gufortel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/09 16:29:30 by gufortel          #+#    #+#             */
-/*   Updated: 2018/11/11 10:56:27 by Gufortel         ###   ########.fr       */
+/*   Created: 2017/11/07 20:44:29 by gufortel          #+#    #+#             */
+/*   Updated: 2017/11/12 03:46:52 by gufortel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef COREWAR_H
-# define COREWAR_H
-# include "./op.h"
-#endif
+#include "includes/libft.h"
+
+size_t	ft_strlen(const char *str)
+{
+	size_t i;
+
+	i = 0;
+	if (!str)
+		return (0);
+	while (*str)
+	{
+		i++;
+		str++;
+	}
+	return (i);
+}

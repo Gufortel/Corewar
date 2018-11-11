@@ -1,16 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   corewar.h                                          :+:      :+:    :+:   */
+/*   ft_bzero.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: Gufortel <gufortel@student.42.fr>          +#+  +:+       +#+        */
+/*   By: gufortel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/09 16:29:30 by gufortel          #+#    #+#             */
-/*   Updated: 2018/11/11 10:56:27 by Gufortel         ###   ########.fr       */
+/*   Created: 2017/11/07 21:46:36 by gufortel          #+#    #+#             */
+/*   Updated: 2017/11/08 00:54:52 by gufortel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef COREWAR_H
-# define COREWAR_H
-# include "./op.h"
-#endif
+#include "includes/libft.h"
+
+void	ft_bzero(void *s, size_t n)
+{
+	size_t		i;
+	char		*str;
+
+	i = 0;
+	str = (char*)s;
+	while (i < n)
+	{
+		str[i] = '\0';
+		i++;
+	}
+}

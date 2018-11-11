@@ -6,7 +6,7 @@
 /*   By: Gufortel <gufortel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/10/04 11:33:27 by zaz               #+#    #+#             */
-/*   Updated: 2018/11/09 23:23:30 by Gufortel         ###   ########.fr       */
+/*   Updated: 2018/11/11 11:48:10 by Gufortel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@
 
 #ifndef OP_H
 # define OP_H
+
+# include "../libft/includes/libft.h"
 
 # define OP_LIVE        1
 # define OP_LD          2
@@ -97,13 +99,15 @@ typedef struct		header_s
 typedef struct    op_s
 {
   char            *name;
-  int             
-  int             arg;
+  int             nbarg;
+  int             arg[3];
   int             op_code;
   int             cycles;
-  char            *description;
+  char            *def;
   int             carry;
-  int             
+  int             jesaispas;
 }                 t_op;
+
+# include "./proto.h"
 
 #endif

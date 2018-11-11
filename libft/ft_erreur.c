@@ -1,16 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   corewar.h                                          :+:      :+:    :+:   */
+/*   ft_erreur.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: Gufortel <gufortel@student.42.fr>          +#+  +:+       +#+        */
+/*   By: gufortel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/09 16:29:30 by gufortel          #+#    #+#             */
-/*   Updated: 2018/11/11 10:56:27 by Gufortel         ###   ########.fr       */
+/*   Created: 2018/01/11 18:18:01 by gufortel          #+#    #+#             */
+/*   Updated: 2018/04/25 05:29:14 by lmoreaux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef COREWAR_H
-# define COREWAR_H
-# include "./op.h"
-#endif
+#include "./includes/ft_printf.h"
+
+void	ft_mal_loc(void)
+{
+	g_exit = -1;
+}

@@ -1,16 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   corewar.h                                          :+:      :+:    :+:   */
+/*   ft_memalloc.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: Gufortel <gufortel@student.42.fr>          +#+  +:+       +#+        */
+/*   By: gufortel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/09 16:29:30 by gufortel          #+#    #+#             */
-/*   Updated: 2018/11/11 10:56:27 by Gufortel         ###   ########.fr       */
+/*   Created: 2017/11/08 17:58:11 by gufortel          #+#    #+#             */
+/*   Updated: 2018/10/29 18:18:26 by gufortel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef COREWAR_H
-# define COREWAR_H
-# include "./op.h"
-#endif
+#include "includes/libft.h"
+
+void	*ft_memalloc(size_t size)
+{
+	void	*mem;
+	char	*str;
+	size_t	i;
+
+	i = 0;
+	mem = malloc(size * 2);
+	str = (char*)mem;
+	while (i < size)
+	{
+		str[i] = '\0';
+		i++;
+	}
+	return (mem);
+}

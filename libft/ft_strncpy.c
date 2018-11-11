@@ -1,18 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_strncpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: Gufortel <gufortel@student.42.fr>          +#+  +:+       +#+        */
+/*   By: gufortel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/09 16:15:46 by Gufortel          #+#    #+#             */
-/*   Updated: 2018/11/11 11:47:47 by Gufortel         ###   ########.fr       */
+/*   Created: 2017/11/08 04:47:52 by gufortel          #+#    #+#             */
+/*   Updated: 2017/11/08 05:02:49 by gufortel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./includes/corewar.h"
+#include "includes/libft.h"
 
-int     main()
+char	*ft_strncpy(char *dest, const char *src, size_t n)
 {
+	unsigned int i;
 
+	i = 0;
+	while ((src[i] != '\0') && (i < n))
+	{
+		dest[i] = src[i];
+		i++;
+	}
+	while (i < n)
+	{
+		dest[i] = '\0';
+		i++;
+	}
+	return (dest);
 }
