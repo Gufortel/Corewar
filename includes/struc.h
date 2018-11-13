@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   struc.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: Gufortel <gufortel@student.42.fr>          +#+  +:+       +#+        */
+/*   By: gufortel <gufortel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/11 15:25:57 by Gufortel          #+#    #+#             */
-/*   Updated: 2018/11/12 20:55:43 by Gufortel         ###   ########.fr       */
+/*   Updated: 2018/11/13 16:06:18 by gufortel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,6 @@ typedef struct		s_op
 typedef struct		s_map
 {
 	char			val;
-
 }					t_map;
 
 typedef struct		s_proc
@@ -50,13 +49,15 @@ typedef struct		s_play
 	char			comment[COMMENT_LENGTH + 1];
 	char			champ[CHAMP_MAX_SIZE + 1];
 	int				len_champ;
+	int				nb;
+	int				fd;
 	char			*name_file;
 	char			taunt[10 + (1 * 2)];
 }					t_play;
 
 typedef struct		s_env
 {
-	t_play			play[MAX_PLAYERS + 1];
+	t_play			*play[MAX_PLAYERS + 1];
 	t_proc			*begin;
 	t_map			mp[MEM_SIZE];
 	int				proc;

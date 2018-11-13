@@ -3,16 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   parse.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: Gufortel <gufortel@student.42.fr>          +#+  +:+       +#+        */
+/*   By: gufortel <gufortel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/12 12:31:08 by Gufortel          #+#    #+#             */
-/*   Updated: 2018/11/12 17:43:06 by Gufortel         ###   ########.fr       */
+/*   Updated: 2018/11/13 12:58:30 by gufortel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "./includes/corewar.h"
 
-void    parsename()
+void	parsename()
 {
-
 }

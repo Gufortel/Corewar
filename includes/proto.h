@@ -3,20 +3,60 @@
 /*                                                        :::      ::::::::   */
 /*   proto.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: Gufortel <gufortel@student.42.fr>          +#+  +:+       +#+        */
+/*   By: gufortel <gufortel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/11 10:19:16 by Gufortel          #+#    #+#             */
-/*   Updated: 2018/11/12 17:46:17 by Gufortel         ###   ########.fr       */
+/*   Updated: 2018/11/13 16:07:57 by gufortel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PROTO_H
 # define PROTO_H
 
+/*
+** parse.c
+*/
+
+void	parsename(void);
+
+/*
+** op.c
+*/
+
 t_op	*buildtab(t_op *pt);
-t_env   *createenv(void);
-void    delenv(t_env **p);
-t_play  *createplay(char *name, char *comment);
-void    parsename(void);
+
+/*
+** env.c
+*/
+
+t_env	*createenv(void);
+void	delenv(t_env **p);
+
+/*
+** play.c
+*/
+
+t_play	*createplay(char *name);
+void	delplay(t_play **p);
+
+/*
+** proc.c
+*/
+
+t_proc	*createproc(void);
+t_proc	*pushproc(t_proc **begin, int pc);
+void	delproc(t_proc **begin);
+
+/*
+** erreur.c
+*/
+
+void	erreur(char *str);
+
+/*
+** openfile.c
+*/
+
+void	openfile(t_env *p);
 
 #endif

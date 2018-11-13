@@ -1,21 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   corewar.h                                          :+:      :+:    :+:   */
+/*   erreur.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gufortel <gufortel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/09 16:29:30 by gufortel          #+#    #+#             */
-/*   Updated: 2018/11/13 16:04:10 by gufortel         ###   ########.fr       */
+/*   Created: 2018/11/13 15:08:58 by gufortel          #+#    #+#             */
+/*   Updated: 2018/11/13 16:09:47 by gufortel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef COREWAR_H
-# define COREWAR_H
-# include "./op.h"
-# include "struc.h"
-# include "proto.h"
-# include <sys/types.h> 
-# include <sys/stat.h> 
-# include <fcntl.h>
-#endif
+#include "./includes/corewar.h"
+
+void	erreur(char *str)
+{
+	ft_printf(str);
+	exit(-1);
+}
