@@ -6,7 +6,7 @@
 /*   By: gufortel <gufortel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/13 16:00:18 by gufortel          #+#    #+#             */
-/*   Updated: 2018/11/15 21:09:01 by gufortel         ###   ########.fr       */
+/*   Updated: 2018/11/15 21:16:01 by gufortel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,5 +51,7 @@ void	openfile(t_env *p)
 		sizeof(COREWAR_EXEC_MAGIC) + 6), COMMENT_LENGTH);
 		ft_printf("comment          = %s\n/////////////////////////////////////////////////\n", p->play[j]->comment);
 		j++;
+		loadchamp(p->play[j]);
+		close(p->play[j]->fd);
 	}
 }
