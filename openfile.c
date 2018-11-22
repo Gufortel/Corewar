@@ -6,7 +6,7 @@
 /*   By: gufortel <gufortel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/13 16:00:18 by gufortel          #+#    #+#             */
-/*   Updated: 2018/11/15 21:16:01 by gufortel         ###   ########.fr       */
+/*   Updated: 2018/11/22 14:12:54 by gufortel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,6 @@ void	testmagic(char *strr)
 
 	i = COREWAR_EXEC_MAGIC;
 	str = (unsigned char*)strr;
-	//magic = (char*)ft_memalloc(sizeof(COREWAR_EXEC_MAGIC) + 1);
-	//ft_strncpy(magic, str, sizeof(COREWAR_EXEC_MAGIC));
 	if (str[0] == (i >> 24) && str[1] == ((i >> 16) & 0xff)
 			&& str[2] == ((i >> 8) & 0xff) && str[3] == (i & 0xff))
 		;
@@ -50,8 +48,8 @@ void	openfile(t_env *p)
 		ft_strncpy(p->play[j]->comment, buf + (PROG_NAME_LENGTH +
 		sizeof(COREWAR_EXEC_MAGIC) + 6), COMMENT_LENGTH);
 		ft_printf("comment          = %s\n/////////////////////////////////////////////////\n", p->play[j]->comment);
-		j++;
 		loadchamp(p->play[j]);
 		close(p->play[j]->fd);
+		j++;
 	}
 }
