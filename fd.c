@@ -6,7 +6,7 @@
 /*   By: gufortel <gufortel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/05 08:18:59 by gufortel          #+#    #+#             */
-/*   Updated: 2018/12/05 08:50:15 by gufortel         ###   ########.fr       */
+/*   Updated: 2018/12/05 17:23:10 by gufortel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,20 +14,20 @@
 
 int			fd_open(char *name, int i)
 {
-    int		fd;
+	int		fd;
 
-    fd = open(name, i);
-    if (fd == -1)
+	fd = open(name, i);
+	if (fd == -1)
 		erreur("%m\n");
-    return (fd);
+	return (fd);
 }
 
 int			fd_close(int fd)
 {
-    int		i;
+	int		i;
 
-    i = close(fd);
-    if (i == -1)
+	i = close(fd);
+	if (i == -1)
 		erreur("%m\n");
-    return (i);
+	return (i);
 }

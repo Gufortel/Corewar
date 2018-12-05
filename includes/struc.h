@@ -6,7 +6,7 @@
 /*   By: gufortel <gufortel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/11 15:25:57 by Gufortel          #+#    #+#             */
-/*   Updated: 2018/12/05 15:52:53 by gufortel         ###   ########.fr       */
+/*   Updated: 2018/12/05 20:06:52 by gufortel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,6 +53,7 @@ typedef struct		s_play
 	int				nb;
 	int				nbdef;
 	int				fd;
+	int				adr;
 	char			*name_file;
 	char			taunt[10 + (1 * 2)];
 }					t_play;

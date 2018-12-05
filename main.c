@@ -6,7 +6,7 @@
 /*   By: gufortel <gufortel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/09 16:15:46 by Gufortel          #+#    #+#             */
-/*   Updated: 2018/12/05 15:23:53 by gufortel         ###   ########.fr       */
+/*   Updated: 2018/12/05 18:17:19 by gufortel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ t_play	*createplayers(char **av, int i, t_play *adr)
 	if (adr->nb == 0)
 	{
 		adr->nbdef = 1;
-		adr->nb = 42;
+		adr->nb = 0;
 	}
 	return (adr);
 }
@@ -48,7 +48,7 @@ void	treat(char **av, t_env *p, int ac, int i)
 		else
 		{
 			p->play[++j] = createplay(av[i]);
-			p->play[j]->nb = j;
+			p->play[j]->nbdef = 1;
 		}
 	}
 }

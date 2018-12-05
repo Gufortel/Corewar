@@ -1,17 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   parse.c                                            :+:      :+:    :+:   */
+/*   create_proc.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gufortel <gufortel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/12 12:31:08 by Gufortel          #+#    #+#             */
-/*   Updated: 2018/11/13 12:58:30 by gufortel         ###   ########.fr       */
+/*   Created: 2018/12/05 19:10:14 by gufortel          #+#    #+#             */
+/*   Updated: 2018/12/05 20:06:51 by gufortel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "./includes/corewar.h"
 
-void	parsename()
+void	create_proc(t_env *p)
 {
+	int		j;
+
+	j = MAX_PLAYERS;
+	while (j >= 0)
+	{
+
+	}
 }

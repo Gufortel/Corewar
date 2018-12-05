@@ -6,7 +6,7 @@
 /*   By: gufortel <gufortel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/13 16:00:18 by gufortel          #+#    #+#             */
-/*   Updated: 2018/12/05 15:42:02 by gufortel         ###   ########.fr       */
+/*   Updated: 2018/12/05 19:09:52 by gufortel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 void	testmagic(char *strr)
 {
-	unsigned char 	*str;
-	int		i;
+	unsigned char	*str;
+	int				i;
 
 	i = COREWAR_EXEC_MAGIC;
 	str = (unsigned char*)strr;
@@ -31,25 +31,25 @@ void	check_nb(t_env *p, int ch, int i, int j)
 	while (ch != 0)
 	{
 		ch = 0;
-		while (j < MAX_PLAYERS)
+		j = MAX_PLAYERS - 1;
+		while (j >= 0)
 		{
-			i = 0;
-			while (i < MAX_PLAYERS)
+			i = MAX_PLAYERS - 1;
+			while (i >= 0)
 			{
 				if (p->play[i] && p->play[j] && p->play[i]->nb == p->play[j]->nb
-				&& i != j)
+				&& i != j && ++ch != -12)
 				{
 					if (p->play[j]->nbdef == 1)
-					{
-						ch++;
 						p->play[j]->nb = p->play[j]->nb + 1;
-					}
+					else if (p->play[i]->nbdef == 1)
+						p->play[i]->nb = p->play[i]->nb + 1;
 					else
 						erreur("number must be different\n");
 				}
-				i++;
+				i--;
 			}
-			j++;
+			j--;
 		}
 	}
 }
@@ -62,14 +62,16 @@ void	init_arena(t_env *p)
 
 	pos = 0;
 	j = 0;
-	check_nb(p, 1, 0, 0);
-	while(p->play[j])
+	check_nb(p, 1, MAX_PLAYERS - 1, MAX_PLAYERS - 1);
+	while (p->play[j])
 	{
-	i = 0;
-		while(i < CHAMP_MAX_SIZE)
+		p->play[j]->adr = pos;
+		i = 0;
+		ft_printf("joueur %d = %d\n", j, p->play[j]->nb);
+		while (i < CHAMP_MAX_SIZE)
 		{
 			p->mp[pos].val = p->play[j]->champ[i];
-			p->mp[pos].players = (p->play[j]->champ[i] != 0)?
+			p->mp[pos].players = (p->play[j]->champ[i] != 0) ?
 			j + 1 : 0;
 			i++;
 			pos++;
@@ -77,6 +79,7 @@ void	init_arena(t_env *p)
 		j++;
 		pos = j * MEM_SIZE / p->nbplayers;
 	}
+	create_proc(p);
 	dump_map(p);
 }
 
