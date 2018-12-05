@@ -6,7 +6,7 @@
 /*   By: gufortel <gufortel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/11 15:25:57 by Gufortel          #+#    #+#             */
-/*   Updated: 2018/11/13 16:06:18 by gufortel         ###   ########.fr       */
+/*   Updated: 2018/12/05 15:52:53 by gufortel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,8 @@ typedef struct		s_op
 
 typedef struct		s_map
 {
-	char			val;
+	unsigned char			val;
+	char					players;
 }					t_map;
 
 typedef struct		s_proc
@@ -50,6 +51,7 @@ typedef struct		s_play
 	char			champ[CHAMP_MAX_SIZE + 1];
 	int				len_champ;
 	int				nb;
+	int				nbdef;
 	int				fd;
 	char			*name_file;
 	char			taunt[10 + (1 * 2)];
@@ -67,5 +69,6 @@ typedef struct		s_env
 	int				cycle_act;
 	int				win;
 	int				dump;
+	int				nbplayers;
 }					t_env;
 #endif

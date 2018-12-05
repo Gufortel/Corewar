@@ -6,7 +6,7 @@
 /*   By: gufortel <gufortel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/13 16:00:18 by gufortel          #+#    #+#             */
-/*   Updated: 2018/11/22 14:12:54 by gufortel         ###   ########.fr       */
+/*   Updated: 2018/12/05 15:42:02 by gufortel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,60 @@ void	testmagic(char *strr)
 		erreur("bad magic bit\n");
 }
 
+void	check_nb(t_env *p, int ch, int i, int j)
+{
+	while (ch != 0)
+	{
+		ch = 0;
+		while (j < MAX_PLAYERS)
+		{
+			i = 0;
+			while (i < MAX_PLAYERS)
+			{
+				if (p->play[i] && p->play[j] && p->play[i]->nb == p->play[j]->nb
+				&& i != j)
+				{
+					if (p->play[j]->nbdef == 1)
+					{
+						ch++;
+						p->play[j]->nb = p->play[j]->nb + 1;
+					}
+					else
+						erreur("number must be different\n");
+				}
+				i++;
+			}
+			j++;
+		}
+	}
+}
+
+void	init_arena(t_env *p)
+{
+	int		pos;
+	int		j;
+	int		i;
+
+	pos = 0;
+	j = 0;
+	check_nb(p, 1, 0, 0);
+	while(p->play[j])
+	{
+	i = 0;
+		while(i < CHAMP_MAX_SIZE)
+		{
+			p->mp[pos].val = p->play[j]->champ[i];
+			p->mp[pos].players = (p->play[j]->champ[i] != 0)?
+			j + 1 : 0;
+			i++;
+			pos++;
+		}
+		j++;
+		pos = j * MEM_SIZE / p->nbplayers;
+	}
+	dump_map(p);
+}
+
 void	openfile(t_env *p)
 {
 	int		j;
@@ -36,10 +90,10 @@ void	openfile(t_env *p)
 	size = PROG_NAME_LENGTH + COMMENT_LENGTH + sizeof(COREWAR_EXEC_MAGIC);
 	while (p->play[j])
 	{
+		if (j > MAX_PLAYERS)
+			erreur("Nombre de players incorrecte\n");
 		ft_printf("fichier a ouvrir : %s\n", p->play[j]->name_file);
-		p->play[j]->fd = open(p->play[j]->name_file, O_RDONLY);
-		if (p->play[j]->fd <= 0)
-			erreur("%m\n");
+		p->play[j]->fd = fd_open(p->play[j]->name_file, O_RDONLY);
 		read(p->play[j]->fd, buf, size);
 		testmagic(buf);
 		ft_strncpy(p->play[j]->name, buf + sizeof(COREWAR_EXEC_MAGIC),
@@ -49,7 +103,10 @@ void	openfile(t_env *p)
 		sizeof(COREWAR_EXEC_MAGIC) + 6), COMMENT_LENGTH);
 		ft_printf("comment          = %s\n/////////////////////////////////////////////////\n", p->play[j]->comment);
 		loadchamp(p->play[j]);
-		close(p->play[j]->fd);
+		fd_close(p->play[j]->fd);
 		j++;
 	}
+	p->nbplayers = j;
+	ft_printf("nombre de joeurs = %d\n", j);
+	init_arena(p);
 }

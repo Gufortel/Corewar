@@ -6,7 +6,7 @@
 /*   By: gufortel <gufortel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/11 10:19:16 by Gufortel          #+#    #+#             */
-/*   Updated: 2018/11/22 14:09:12 by gufortel         ###   ########.fr       */
+/*   Updated: 2018/12/05 14:45:05 by gufortel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,6 +64,19 @@ void	openfile(t_env *p);
 */
 
 void	loadchamp(t_play *p);
+
+/*
+** fd.c
+*/
+
+int		fd_open(char *name, int i);
+int		fd_close(int fd);
+
+/*
+** dump.c
+*/
+
+void	dump_map(t_env *p);
 
 /*
 ** 

@@ -6,7 +6,7 @@
 /*   By: gufortel <gufortel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/09 16:15:46 by Gufortel          #+#    #+#             */
-/*   Updated: 2018/11/15 21:03:22 by gufortel         ###   ########.fr       */
+/*   Updated: 2018/12/05 15:23:53 by gufortel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,11 @@ t_play	*createplayers(char **av, int i, t_play *adr)
 		erreur("[[-n number] champion1.cor]\n");
 	adr = createplay(av[i + 2]);
 	adr->nb = (ft_atoi(av[i + 1]) > 0) ? ft_atoi(av[i + 1]) : 0;
+	if (adr->nb == 0)
+	{
+		adr->nbdef = 1;
+		adr->nb = 42;
+	}
 	return (adr);
 }
 
@@ -38,14 +43,12 @@ void	treat(char **av, t_env *p, int ac, int i)
 		else if (ft_strcmp(av[i], "-n") == 0 && j++ > -12)
 		{
 			p->play[j] = createplayers(av, i, p->play[j]);
-			p->play[j]->nb = (p->play[j]->nb == 0) ? j : p->play[j]->nb;
 			i += 2;
 		}
 		else
 		{
-			p->play[j] = createplay(av[i]);
+			p->play[++j] = createplay(av[i]);
 			p->play[j]->nb = j;
-			j++;
 		}
 	}
 }
