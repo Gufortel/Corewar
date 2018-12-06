@@ -6,7 +6,7 @@
 /*   By: gufortel <gufortel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/22 13:46:07 by gufortel          #+#    #+#             */
-/*   Updated: 2018/12/05 17:20:21 by gufortel         ###   ########.fr       */
+/*   Updated: 2018/12/06 21:26:22 by gufortel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,11 @@
 
 void	loadchamp(t_play *p)
 {
-	char	test[10];
+	char	test[14];
 	int		i;
 
 	i = 0;
+	read(p->fd, test, 12);
 	while (read(p->fd, test, 1) > 0)
 	{
 		p->champ[i] = test[0];
@@ -26,5 +27,4 @@ void	loadchamp(t_play *p)
 		i++;
 	}
 	p->len_champ = i;
-	ft_printf("champ = '%s'\n\n", p->champ);
 }

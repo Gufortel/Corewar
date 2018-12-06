@@ -1,28 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   create_proc.c                                      :+:      :+:    :+:   */
+/*   arg.c                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gufortel <gufortel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/12/05 19:10:14 by gufortel          #+#    #+#             */
-/*   Updated: 2018/12/06 23:21:13 by gufortel         ###   ########.fr       */
+/*   Created: 2018/12/06 22:16:30 by gufortel          #+#    #+#             */
+/*   Updated: 2018/12/06 23:23:38 by gufortel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "./includes/corewar.h"
 
-void	create_proc(t_env *p)
+int			argint(t_env *p, int pc, int size)
 {
-	int		j;
-	t_proc	*ptr;
+	unsigned char arg[4];
 
-	j = MAX_PLAYERS - 1;
-	while (j >= 0)
+	arg[0] = 0;
+	arg[1] = 0;
+	arg[2] = 0;
+	arg[3] = 0;
+	if (size == 2)
 	{
-		ptr = pushproc(&p->begin, p->play[j]->adr);
-		ptr->reg[0] = p->play[j]->adr;
-		p->mp[ptr->reg[0]].players = 5;
-		j--;
+		arg[0] = p->mp[pc + 1].val;
+		arg[1] = p->mp[pc].val;
 	}
+	else
+	{
+		arg[0] = p->mp[pc + 3].val;
+		arg[1] = p->mp[pc + 2].val;
+		arg[2] = p->mp[pc + 1].val;
+		arg[3] = p->mp[pc].val;
+	}
+	return (*(int*)&arg[0]);
 }

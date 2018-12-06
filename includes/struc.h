@@ -6,7 +6,7 @@
 /*   By: gufortel <gufortel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/11 15:25:57 by Gufortel          #+#    #+#             */
-/*   Updated: 2018/12/05 20:06:52 by gufortel         ###   ########.fr       */
+/*   Updated: 2018/12/06 22:21:12 by gufortel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,6 @@ typedef struct		s_map
 
 typedef struct		s_proc
 {
-	int				live;
 	int				carry;
 	int				pc;
 	int				reg[REG_NUMBER];
@@ -48,10 +47,11 @@ typedef struct		s_play
 {
 	char			name[PROG_NAME_LENGTH + 1];
 	char			comment[COMMENT_LENGTH + 1];
-	char			champ[CHAMP_MAX_SIZE + 1];
+	unsigned char	champ[CHAMP_MAX_SIZE + 1];
 	int				len_champ;
 	int				nb;
 	int				nbdef;
+	int				live;
 	int				fd;
 	int				adr;
 	char			*name_file;

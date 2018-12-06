@@ -6,7 +6,7 @@
 /*   By: gufortel <gufortel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/09 16:15:46 by Gufortel          #+#    #+#             */
-/*   Updated: 2018/12/05 18:17:19 by gufortel         ###   ########.fr       */
+/*   Updated: 2018/12/06 23:20:52 by gufortel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,6 +64,7 @@ int		main(int ac, char **av)
 	p = createenv();
 	treat(av, p, ac, 0);
 	openfile(p);
+	loop(p);
 	delenv(&p);
 //	while (1);
 }

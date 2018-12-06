@@ -6,7 +6,7 @@
 /*   By: gufortel <gufortel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/13 10:55:00 by gufortel          #+#    #+#             */
-/*   Updated: 2018/11/13 14:04:44 by gufortel         ###   ########.fr       */
+/*   Updated: 2018/12/06 23:14:14 by gufortel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ t_proc		*pushproc(t_proc **begin, int pc)
 
 	if (!(*begin))
 	{
+		ft_printf("baise base\n");
 		p = createproc();
 		*begin = p;
 	}

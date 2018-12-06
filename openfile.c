@@ -6,7 +6,7 @@
 /*   By: gufortel <gufortel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/13 16:00:18 by gufortel          #+#    #+#             */
-/*   Updated: 2018/12/05 19:09:52 by gufortel         ###   ########.fr       */
+/*   Updated: 2018/12/06 23:20:43 by gufortel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,7 +87,7 @@ void	openfile(t_env *p)
 {
 	int		j;
 	int		size;
-	char	buf[PROG_NAME_LENGTH + COMMENT_LENGTH + sizeof(COREWAR_EXEC_MAGIC)];
+	char	buf[sizeof(t_header)];
 
 	j = 0;
 	size = PROG_NAME_LENGTH + COMMENT_LENGTH + sizeof(COREWAR_EXEC_MAGIC);
