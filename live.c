@@ -6,7 +6,7 @@
 /*   By: gufortel <gufortel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/06 21:29:21 by gufortel          #+#    #+#             */
-/*   Updated: 2018/12/06 23:57:47 by gufortel         ###   ########.fr       */
+/*   Updated: 2018/12/07 17:54:18 by gufortel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,5 @@ void	live(t_env *p, t_proc *ptr)
 		p->play[j]->nb, p->play[j]->name);
 		ft_printf("j = %d\n", j);
 	}
-	p->mp[ptr->pc].players = j + 1;
 	ptr->pc = ptr->pc + 5;
-	p->mp[ptr->pc].players = 5;
 }

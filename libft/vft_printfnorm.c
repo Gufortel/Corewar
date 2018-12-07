@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printfnorm.c                                    :+:      :+:    :+:   */
+/*   vft_printfnorm.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gufortel <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: gufortel <gufortel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/07 08:42:35 by gufortel          #+#    #+#             */
-/*   Updated: 2018/03/17 05:58:00 by gufortel         ###   ########.fr       */
+/*   Updated: 2018/12/07 15:00:38 by gufortel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,8 +33,8 @@ int		vprintbuffer(t_var *ptr, char **str, int *nbr)
 		}
 		p = p->next;
 	}
-	*nbr = g_len;
-	*str = buffer;
+	*nbr = *nbr + g_len;
+	*str = ft_strcat(*str, buffer);
 	del_t_var(&ptr);
 	g_nbvar = 0;
 	return (g_len);

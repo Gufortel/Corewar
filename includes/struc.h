@@ -6,7 +6,7 @@
 /*   By: gufortel <gufortel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/11 15:25:57 by Gufortel          #+#    #+#             */
-/*   Updated: 2018/12/06 22:21:12 by gufortel         ###   ########.fr       */
+/*   Updated: 2018/12/07 15:10:00 by gufortel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,6 +63,7 @@ typedef struct		s_env
 	t_play			*play[MAX_PLAYERS + 1];
 	t_proc			*begin;
 	t_map			mp[MEM_SIZE];
+	t_proc			*ptr;
 	int				proc;
 	int				cycle;
 	int				live;
