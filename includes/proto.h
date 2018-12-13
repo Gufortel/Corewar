@@ -6,7 +6,7 @@
 /*   By: gufortel <gufortel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/11 10:19:16 by Gufortel          #+#    #+#             */
-/*   Updated: 2018/12/06 22:36:57 by gufortel         ###   ########.fr       */
+/*   Updated: 2018/12/08 16:54:20 by gufortel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -101,5 +101,20 @@ int		argint(t_env *p, int pc, int size);
 */
 
 void	live(t_env *p, t_proc *ptr);
+
+/*
+** ld.c
+*/
+
+void	ld(t_env *p, t_proc *ptr);
+
+/*
+** get_arg.c
+*/
+
+int		get_00(int x);
+int		get_01(int x);
+int		get_02(int x);
+int		get_03(int x);
 
 #endif

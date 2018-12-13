@@ -6,7 +6,7 @@
 /*   By: gufortel <gufortel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/05 14:11:21 by gufortel          #+#    #+#             */
-/*   Updated: 2018/12/07 17:54:00 by gufortel         ###   ########.fr       */
+/*   Updated: 2018/12/13 18:03:26 by gufortel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,15 +78,15 @@ void		dump_map(t_env *p)
 	i = -1;
 	size = 0;
 	str = (char*)ft_memalloc(MEM_SIZE / 4);
-	vft_printf(&str, &size, "{CLEAR}\n");
+//	vft_printf(&str, &size, "{CLEAR}\n");
 	while (++i < MEM_SIZE)
 	{
 		p->ptr = p->begin;
 		colorwrite(i, p, &str, &size);
-		vft_printf(&str, &size, " {EOC}", p->mp[i].val);
+		vft_printf(&str, &size, " {EOC}", p->mp[i].v);
 		p->ptr = p->begin;
 		color(i, p, &str, &size);
-		vft_printf(&str, &size, "%.2x{EOC}", p->mp[i].val);
+		vft_printf(&str, &size, "%.2x{EOC}", p->mp[i].v);
 		if ((i + 1) % pgdc(MEM_SIZE, 70) == 0 && i != 0)
 			vft_printf(&str, &size, "\n");
 	}

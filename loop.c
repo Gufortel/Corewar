@@ -6,11 +6,19 @@
 /*   By: gufortel <gufortel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/06 20:47:45 by gufortel          #+#    #+#             */
-/*   Updated: 2018/12/06 23:53:24 by gufortel         ###   ########.fr       */
+/*   Updated: 2018/12/13 18:45:52 by gufortel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "./includes/corewar.h"
+
+void	looploop(t_env *p, t_proc *ptr)
+{
+	if (p->mp[ptr->pc].v == 1)
+		live(p, ptr);
+	else if (p->mp[ptr->pc].v == 2)
+		ld(p, ptr);
+}
 
 void	loop(t_env *p)
 {
@@ -18,13 +26,17 @@ void	loop(t_env *p)
 	t_proc	*ptr;
 
 	ft_printf("///////////debut traitement\\\\\\\\\\\\\\\\\\\\\\\\\n");
-	ptr = p->begin;
-	while (ptr)
+	ft_printf("p-dump = %d\n", p->dump);
+	while (p->cycle < p->dump || p->cycle != 3)
 	{
-		if (p->mp[ptr->pc].val == 1)
-			live(p, ptr);
-		ptr = ptr->next;
+		ptr = p->begin;
+		while (ptr)
+		{
+			looploop(p, ptr);
+			ptr = ptr->next;
+		}
 		p->cycle = p->cycle + 1;
-		dump_map(p);
+		p->cycle_die = p->cycle_die + 1;
+		ump_map(p);
 	}
 }

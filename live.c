@@ -6,7 +6,7 @@
 /*   By: gufortel <gufortel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/06 21:29:21 by gufortel          #+#    #+#             */
-/*   Updated: 2018/12/07 19:14:57 by gufortel         ###   ########.fr       */
+/*   Updated: 2018/12/08 23:21:09 by gufortel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,4 +30,5 @@ void	live(t_env *p, t_proc *ptr)
 		ft_printf("j = %d\n", j);
 	}
 	ptr->pc = ptr->pc + 5;
+	ptr->pc = ptr->pc % MEM_SIZE;
 }

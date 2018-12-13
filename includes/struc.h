@@ -6,7 +6,7 @@
 /*   By: gufortel <gufortel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/11 15:25:57 by Gufortel          #+#    #+#             */
-/*   Updated: 2018/12/07 15:10:00 by gufortel         ###   ########.fr       */
+/*   Updated: 2018/12/13 18:09:55 by gufortel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ typedef struct		s_op
 
 typedef struct		s_map
 {
-	unsigned char			val;
+	unsigned char			v;
 	char					players;
 }					t_map;
 
@@ -37,7 +37,7 @@ typedef struct		s_proc
 {
 	int				carry;
 	int				pc;
-	int				reg[REG_NUMBER];
+	int				reg[REG_NUMBER + 1];
 	int				cycle;
 	int				pos_cycle;
 	struct s_proc	*next;
@@ -63,7 +63,7 @@ typedef struct		s_env
 	t_play			*play[MAX_PLAYERS + 1];
 	t_proc			*begin;
 	t_map			mp[MEM_SIZE];
-	t_proc			*ptr;
+	t_proc			*ptr; //exclusivement pour dump a ne pas toucher !!
 	int				proc;
 	int				cycle;
 	int				live;

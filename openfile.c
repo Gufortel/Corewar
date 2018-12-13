@@ -6,7 +6,7 @@
 /*   By: gufortel <gufortel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/13 16:00:18 by gufortel          #+#    #+#             */
-/*   Updated: 2018/12/06 23:20:43 by gufortel         ###   ########.fr       */
+/*   Updated: 2018/12/13 18:44:50 by gufortel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,7 +70,7 @@ void	init_arena(t_env *p)
 		ft_printf("joueur %d = %d\n", j, p->play[j]->nb);
 		while (i < CHAMP_MAX_SIZE)
 		{
-			p->mp[pos].val = p->play[j]->champ[i];
+			p->mp[pos].v = p->play[j]->champ[i];
 			p->mp[pos].players = (p->play[j]->champ[i] != 0) ?
 			j + 1 : 0;
 			i++;
@@ -80,7 +80,6 @@ void	init_arena(t_env *p)
 		pos = j * MEM_SIZE / p->nbplayers;
 	}
 	create_proc(p);
-	dump_map(p);
 }
 
 void	openfile(t_env *p)
