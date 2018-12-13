@@ -6,7 +6,7 @@
 /*   By: gufortel <gufortel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/06 20:47:45 by gufortel          #+#    #+#             */
-/*   Updated: 2018/12/13 18:45:52 by gufortel         ###   ########.fr       */
+/*   Updated: 2018/12/13 18:59:44 by gufortel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,6 @@ void	loop(t_env *p)
 		}
 		p->cycle = p->cycle + 1;
 		p->cycle_die = p->cycle_die + 1;
-		ump_map(p);
+		dump_map(p);
 	}
 }
