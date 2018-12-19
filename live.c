@@ -6,7 +6,7 @@
 /*   By: gufortel <gufortel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/06 21:29:21 by gufortel          #+#    #+#             */
-/*   Updated: 2018/12/08 23:21:09 by gufortel         ###   ########.fr       */
+/*   Updated: 2018/12/19 17:28:07 by gufortel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,11 +24,12 @@ void	live(t_env *p, t_proc *ptr)
 		j++;
 	if (j != MAX_PLAYERS)
 	{
-		p->play[j]->live = 1;
+		p->play[j]->live = p->cycle;
 		ft_printf("un processus dit que le joueur %d(%s) est en vie)\n",
 		p->play[j]->nb, p->play[j]->name);
 		ft_printf("j = %d\n", j);
 	}
+	ptr->live = 1;
 	ptr->pc = ptr->pc + 5;
 	ptr->pc = ptr->pc % MEM_SIZE;
 }

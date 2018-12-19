@@ -6,7 +6,7 @@
 /*   By: gufortel <gufortel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/11 15:25:57 by Gufortel          #+#    #+#             */
-/*   Updated: 2018/12/13 18:09:55 by gufortel         ###   ########.fr       */
+/*   Updated: 2018/12/19 19:01:41 by gufortel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,10 @@ typedef struct		s_proc
 	int				carry;
 	int				pc;
 	int				reg[REG_NUMBER + 1];
+	int				nbdef;
 	int				cycle;
+	int				live;
+	int				die;
 	int				pos_cycle;
 	struct s_proc	*next;
 }					t_proc;
@@ -69,6 +72,7 @@ typedef struct		s_env
 	int				live;
 	int				cycle_die;
 	int				cycle_act;
+	int				check;
 	int				win;
 	int				dump;
 	int				nbplayers;

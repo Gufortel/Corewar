@@ -6,7 +6,7 @@
 /*   By: gufortel <gufortel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/05 14:11:21 by gufortel          #+#    #+#             */
-/*   Updated: 2018/12/13 18:59:20 by gufortel         ###   ########.fr       */
+/*   Updated: 2018/12/19 15:52:34 by gufortel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,19 +31,26 @@ void		colorwrite(int i, t_env *p, char **str, int *size)
 {
 	while (p->ptr)
 	{
-		if (p->ptr->pc == i && p->play[0]->nb == p->ptr->reg[1])
+		if (p->ptr->pc == i && p->play[0]->nb == p->ptr->reg[1]
+		&& p->ptr->die == 0)
 			vft_printf(str, size, "{B_RED}");
-		else if (p->ptr->pc == i && p->play[1]->nb == p->ptr->reg[1])
+		else if (p->ptr->pc == i && p->play[1]->nb == p->ptr->reg[1]
+		&& p->ptr->die == 0)
 			vft_printf(str, size, "{B_BLUE}");
-		else if (p->ptr->pc == i && p->play[2]->nb == p->ptr->reg[1])
+		else if (p->ptr->pc == i && p->play[2]->nb == p->ptr->reg[1]
+		&& p->ptr->die == 0)
 			vft_printf(str, size, "{B_GREEN}");
-		else if (p->ptr->pc == i && p->play[3]->nb == p->ptr->reg[1])
+		else if (p->ptr->pc == i && p->play[3]->nb == p->ptr->reg[1]
+		&& p->ptr->die == 0)
 			vft_printf(str, size, "{B_YELLOW}");
-		else if (p->ptr->pc == i && p->play[4]->nb == p->ptr->reg[1])
+		else if (p->ptr->pc == i && p->play[4]->nb == p->ptr->reg[1]
+		&& p->ptr->die == 0)
 			vft_printf(str, size, "{B_CYAN}");
-		else if (p->ptr->pc == i && p->play[5]->nb == p->ptr->reg[1])
+		else if (p->ptr->pc == i && p->play[5]->nb == p->ptr->reg[1]
+		&& p->ptr->die == 0)
 			vft_printf(str, size, "{B_PURPLE}");
-		else if (p->ptr->pc == i && p->play[0]->nb == p->ptr->reg[1])
+		else if (p->ptr->pc == i && p->play[0]->nb == p->ptr->reg[1]
+		&& p->ptr->die == 0)
 			vft_printf(str, size, "{EOC}");
 		p->ptr = p->ptr->next;
 	}

@@ -6,7 +6,7 @@
 /*   By: gufortel <gufortel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/13 16:00:18 by gufortel          #+#    #+#             */
-/*   Updated: 2018/12/13 18:44:50 by gufortel         ###   ########.fr       */
+/*   Updated: 2018/12/19 19:02:59 by gufortel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,6 +54,18 @@ void	check_nb(t_env *p, int ch, int i, int j)
 	}
 }
 
+void	nbdef(t_env *p)
+{
+	int i;
+
+	i = 0;
+	while (p->play[i])
+	{
+		p->play[i]->nbdef = i + 1;
+		i++;
+	}
+}
+
 void	init_arena(t_env *p)
 {
 	int		pos;
@@ -63,6 +75,7 @@ void	init_arena(t_env *p)
 	pos = 0;
 	j = 0;
 	check_nb(p, 1, MAX_PLAYERS - 1, MAX_PLAYERS - 1);
+	nbdef(p);
 	while (p->play[j])
 	{
 		p->play[j]->adr = pos;

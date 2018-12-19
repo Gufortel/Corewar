@@ -6,7 +6,7 @@
 /*   By: gufortel <gufortel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/11 10:19:16 by Gufortel          #+#    #+#             */
-/*   Updated: 2018/12/08 16:54:20 by gufortel         ###   ########.fr       */
+/*   Updated: 2018/12/19 15:45:00 by gufortel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -116,5 +116,17 @@ int		get_00(int x);
 int		get_01(int x);
 int		get_02(int x);
 int		get_03(int x);
+
+/*
+** st.c
+*/
+
+void	st(t_env *p, t_proc *c);
+
+/*
+** life.c
+*/
+
+int		life(t_env *p);
 
 #endif
