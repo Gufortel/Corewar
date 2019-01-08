@@ -7,4 +7,6 @@ st r2,r3
 add r2,r3,r4
 sub r2,r3,r4
 and r2,r3,r4
-or r2,r46,r4
+or r2,r3,r4
+xor r2,r3,r4
+zjmp %3

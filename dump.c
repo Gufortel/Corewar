@@ -6,7 +6,7 @@
 /*   By: gufortel <gufortel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/05 14:11:21 by gufortel          #+#    #+#             */
-/*   Updated: 2018/12/19 15:52:34 by gufortel         ###   ########.fr       */
+/*   Updated: 2019/01/08 21:24:04 by gufortel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,7 +85,7 @@ void		dump_map(t_env *p)
 	i = -1;
 	size = 0;
 	str = (char*)ft_memalloc(MEM_SIZE / 4);
-//	vft_printf(&str, &size, "{CLEAR}\n");
+	vft_printf(&str, &size, "{CLEAR}\n");
 	while (++i < MEM_SIZE)
 	{
 		p->ptr = p->begin;

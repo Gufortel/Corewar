@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   or.c                                               :+:      :+:    :+:   */
+/*   xor.c                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gufortel <gufortel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/12/20 19:27:44 by gufortel          #+#    #+#             */
-/*   Updated: 2019/01/08 21:30:27 by gufortel         ###   ########.fr       */
+/*   Created: 2019/01/08 21:05:59 by gufortel          #+#    #+#             */
+/*   Updated: 2019/01/08 21:30:21 by gufortel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "./includes/corewar.h"
 
-int			or2(t_env *p, t_proc *c)
+int			xor2(t_env *p, t_proc *c)
 {
 	int		tmp;
 
@@ -26,7 +26,7 @@ int			or2(t_env *p, t_proc *c)
 	return (tmp);
 }
 
-void		or(t_env *p, t_proc *c)
+void		xor(t_env *p, t_proc *c)
 {
 	int		tmp;
 	int		tt;
@@ -40,18 +40,18 @@ void		or(t_env *p, t_proc *c)
 		tt = (get_00(p->mp[c->pc + 1].v) == 2) ? 5 : tt;
 		tt = (get_00(p->mp[c->pc + 1].v) == 3) ? 3 : tt;
 		tmp = get_all(p, get_00(p->mp[c->pc + 1].v), c, 1)
-		| get_all(p, get_01(p->mp[c->pc + 1].v), c, tt);
+		^ get_all(p, get_01(p->mp[c->pc + 1].v), c, tt);
 		c->reg[p->mp[c->pc + 4].v] = tmp;
 		c->carry = ((get_00(p->mp[c->pc + 1].v) == 1 && p->mp[c->pc + 2].v >= 1
 		&& p->mp[c->pc + 2].v <= REG_NUMBER) || get_00(p->mp[c->pc + 1].v) !=
 		1) ? 1 : 0;
-		c->carry = ((get_01(p->mp[c->pc + tt + 1].v) == 1 && p->mp[c->pc + tt +
+		c->carry = ((get_01(p->mp[c->pc + 1].v) == 1 && p->mp[c->pc + tt +
 		1].v >= 1 && p->mp[c->pc + tt + 1].v <= REG_NUMBER) || get_01(p->mp[c->
 		pc + 1].v) != 1) ? c->carry : 0;
 	}
 	else
 		c->carry = 0;
-	ft_printf("resultat du or = %d\n", tmp);
-	tmp = or2(p, c);
+	ft_printf("resultat du xor = %d\n", tmp);
+	tmp = xor2(p, c);
 	c->pc = c->pc + 3 + tmp;
 }
