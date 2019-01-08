@@ -6,7 +6,7 @@
 /*   By: gufortel <gufortel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/19 14:35:21 by gufortel          #+#    #+#             */
-/*   Updated: 2018/12/19 19:05:41 by gufortel         ###   ########.fr       */
+/*   Updated: 2018/12/20 15:31:38 by gufortel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,5 +79,6 @@ int		life(t_env *p)
 			ptr->die = 1;
 		ptr = ptr->next;
 	}
+	p->cycle_die = 0;
 	return (win(p));
 }

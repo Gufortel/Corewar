@@ -6,7 +6,7 @@
 /*   By: gufortel <gufortel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/11 10:19:16 by Gufortel          #+#    #+#             */
-/*   Updated: 2018/12/19 15:45:00 by gufortel         ###   ########.fr       */
+/*   Updated: 2019/01/08 17:40:13 by gufortel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -128,5 +128,41 @@ void	st(t_env *p, t_proc *c);
 */
 
 int		life(t_env *p);
+
+/*
+** add.c
+*/
+
+void	add(t_env *p, t_proc *c);
+
+/*
+** sub.c
+*/
+
+void	sub(t_env *p, t_proc *c);
+
+/*
+** and.c
+*/
+
+void	and(t_env *p, t_proc *c);
+
+/*
+** or.c
+*/
+
+void	or(t_env *p, t_proc *c);
+
+/*
+** get_ind.c
+*/
+
+int		get_ind(int val, t_env *p, int pc, int bit);
+
+/*
+** get_all.c
+*/
+
+int		get_all(t_env *p, int type, t_proc *c, int nbarg);
 
 #endif

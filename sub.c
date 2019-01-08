@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   add.c                                              :+:      :+:    :+:   */
+/*   sub.c                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gufortel <gufortel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/12/19 19:19:16 by gufortel          #+#    #+#             */
-/*   Updated: 2018/12/20 16:20:40 by gufortel         ###   ########.fr       */
+/*   Created: 2018/12/20 16:19:13 by gufortel          #+#    #+#             */
+/*   Updated: 2018/12/20 16:20:29 by gufortel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "./includes/corewar.h"
 
-void		add(t_env *p, t_proc *c)
+void		sub(t_env *p, t_proc *c)
 {
 	int		tmp;
 
@@ -24,7 +24,7 @@ void		add(t_env *p, t_proc *c)
 		&& (p->mp[c->pc + 3].v >= 1 && p->mp[c->pc + 3].v <= REG_NUMBER)
 		&& (p->mp[c->pc + 4].v >= 1 && p->mp[c->pc + 4].v <= REG_NUMBER))
 		{
-			tmp = c->reg[p->mp[c->pc + 2].v] + c->reg[p->mp[c->pc + 3].v];
+			tmp = c->reg[p->mp[c->pc + 2].v] - c->reg[p->mp[c->pc + 3].v];
 			c->carry = (tmp == 0) ? 0 : 1;
 			c->reg[p->mp[c->pc + 4].v] = tmp;
 			ft_printf("valeur de l'opretaion == %d\n\n", tmp);

@@ -6,7 +6,7 @@
 /*   By: gufortel <gufortel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/06 20:47:45 by gufortel          #+#    #+#             */
-/*   Updated: 2018/12/19 19:03:14 by gufortel         ###   ########.fr       */
+/*   Updated: 2019/01/08 15:36:47 by gufortel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,12 @@ void	looploop(t_env *p, t_proc *ptr)
 		ld(p, ptr);
 	else if (p->mp[ptr->pc].v == 3)
 		st(p, ptr);
+	else if (p->mp[ptr->pc].v == 4)
+		add(p, ptr);
+	else if (p->mp[ptr->pc].v == 5)
+		sub(p, ptr);
+	else if (p->mp[ptr->pc].v == 6)
+		and(p, ptr);
 }
 
 void	pos_cycle(t_env *p, t_proc *ptr)
@@ -32,6 +38,12 @@ void	pos_cycle(t_env *p, t_proc *ptr)
 		ptr->cycle = 4;
 	else if (p->mp[ptr->pc].v == 3)
 		ptr->cycle = 4;
+	else if (p->mp[ptr->pc].v == 4)
+		ptr->cycle = 9;
+	else if (p->mp[ptr->pc].v == 5)
+		ptr->cycle = 9;
+	else if (p->mp[ptr->pc].v == 6)
+		ptr->cycle = 5;
 }
 
 void	loop(t_env *p)
