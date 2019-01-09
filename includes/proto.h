@@ -6,7 +6,7 @@
 /*   By: gufortel <gufortel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/11 10:19:16 by Gufortel          #+#    #+#             */
-/*   Updated: 2019/01/09 13:49:26 by gufortel         ###   ########.fr       */
+/*   Updated: 2019/01/09 20:35:15 by gufortel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -177,4 +177,9 @@ void	xor(t_env *p, t_proc *c);
 
 void	zjmp(t_env *p, t_proc *c);
 
+/*
+** ldi.c
+*/
+
+void	ldi(t_env *p, t_proc *c);
 #endif

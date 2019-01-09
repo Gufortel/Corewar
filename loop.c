@@ -6,7 +6,7 @@
 /*   By: gufortel <gufortel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/06 20:47:45 by gufortel          #+#    #+#             */
-/*   Updated: 2019/01/09 17:19:16 by gufortel         ###   ########.fr       */
+/*   Updated: 2019/01/09 20:07:24 by gufortel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,8 @@ void	looploop(t_env *p, t_proc *ptr)
 		xor(p, ptr);
 	else if (p->mp[ptr->pc].v == 9)
 		zjmp(p, ptr);
+	else if (p->mp[ptr->pc].v == 10)
+		ldi(p, ptr);
 }
 
 void	pos_cycle(t_env *p, t_proc *ptr)
@@ -57,6 +59,8 @@ void	pos_cycle(t_env *p, t_proc *ptr)
 		ptr->cycle = 5;
 	else if (p->mp[ptr->pc].v == 9)
 		ptr->cycle = 19;
+	else if (p->mp[ptr->pc].v == 10)
+		ptr->cycle = 24;
 }
 
 void	loop(t_env *p)

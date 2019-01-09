@@ -10,3 +10,4 @@ and r2,r3,r4
 or r2,r3,r4
 xor r2,r3,r4
 zjmp %3
+ldi %2,%4,r4
