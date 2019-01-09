@@ -6,7 +6,7 @@
 /*   By: gufortel <gufortel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/06 21:29:21 by gufortel          #+#    #+#             */
-/*   Updated: 2018/12/19 17:28:07 by gufortel         ###   ########.fr       */
+/*   Updated: 2019/01/09 17:14:26 by gufortel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ void	live(t_env *p, t_proc *ptr)
 	j = 0;
 	live = argint(p, ptr->pc + 1, 4);
 	p->live = p->live + 1;
-	while (p->play[j]->nb != live && j < MAX_PLAYERS)
+	while (j < MAX_PLAYERS && p->play[j]->nb != live)
 		j++;
 	if (j != MAX_PLAYERS)
 	{

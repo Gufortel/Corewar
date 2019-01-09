@@ -6,7 +6,7 @@
 /*   By: gufortel <gufortel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/08 16:46:26 by gufortel          #+#    #+#             */
-/*   Updated: 2019/01/08 18:27:47 by gufortel         ###   ########.fr       */
+/*   Updated: 2019/01/09 15:43:47 by gufortel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,12 +32,5 @@ void	ld(t_env *p, t_proc *c)
 			c->carry = (val == 0) ? 0 : 1;
 		}
 	}
-	val = 0;
-	val = (get_00(p->mp[c->pc + 1].v) == 1) ? val + 1 : val;
-	val = (get_01(p->mp[c->pc + 1].v) == 1) ? val + 1 : val;
-	val = (get_00(p->mp[c->pc + 1].v) == 2) ? val + 4 : val;
-	val = (get_01(p->mp[c->pc + 1].v) == 2) ? val + 4 : val;
-	val = (get_00(p->mp[c->pc + 1].v) == 3) ? val + 2 : val;
-	val = (get_01(p->mp[c->pc + 1].v) == 3) ? val + 2 : val;
 	c->pc = c->pc + 7 - (((p->mp[c->pc + 1].v) & 0x60) >> 5);
 }

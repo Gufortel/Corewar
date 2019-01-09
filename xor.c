@@ -6,7 +6,7 @@
 /*   By: gufortel <gufortel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/08 21:05:59 by gufortel          #+#    #+#             */
-/*   Updated: 2019/01/08 21:30:21 by gufortel         ###   ########.fr       */
+/*   Updated: 2019/01/09 16:07:07 by gufortel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,11 +31,13 @@ void		xor(t_env *p, t_proc *c)
 	int		tmp;
 	int		tt;
 
+		ft_printf("\n\nici\n\n");
 	if ((get_00(p->mp[c->pc + 1].v) == 1 || get_00(p->mp[c->pc + 1].v) == 2
 	|| get_00(p->mp[c->pc + 1].v) == 3) && (get_01(p->mp[c->pc + 1].v) == 1
 	|| get_01(p->mp[c->pc + 1].v) == 2 || get_01(p->mp[c->pc + 1].v) == 3)
 	&& (get_02(p->mp[c->pc + 1].v) == 1))
 	{
+		ft_printf("\n\nici\n\n");
 		tt = (get_00(p->mp[c->pc + 1].v) == 1) ? 2 : tt;
 		tt = (get_00(p->mp[c->pc + 1].v) == 2) ? 5 : tt;
 		tt = (get_00(p->mp[c->pc + 1].v) == 3) ? 3 : tt;

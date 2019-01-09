@@ -6,7 +6,7 @@
 /*   By: gufortel <gufortel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/11 15:25:57 by Gufortel          #+#    #+#             */
-/*   Updated: 2019/01/08 14:48:25 by gufortel         ###   ########.fr       */
+/*   Updated: 2019/01/09 15:20:00 by gufortel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,6 +67,7 @@ typedef struct		s_env
 	t_proc			*begin;
 	t_map			mp[MEM_SIZE];
 	t_proc			*ptr; //exclusivement pour dump a ne pas toucher !!
+	char			*str;
 	int				proc;
 	int				cycle;
 	int				live;
