@@ -6,7 +6,7 @@
 /*   By: gufortel <gufortel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/11 10:19:16 by Gufortel          #+#    #+#             */
-/*   Updated: 2019/01/09 20:35:15 by gufortel         ###   ########.fr       */
+/*   Updated: 2019/01/12 22:37:44 by gufortel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -158,12 +158,14 @@ void	or(t_env *p, t_proc *c);
 */
 
 int		get_ind(int val, t_env *p, int pc, int bit);
+int		get_ind_all(int val, t_env *p, int pc, int bit);
 
 /*
 ** get_all.c
 */
 
 int		get_all(t_env *p, int type, t_proc *c, int nbarg);
+int		get_all_all(t_env *p, int type, t_proc *c, int nbarg);
 
 /*
 ** xor.c
@@ -182,4 +184,34 @@ void	zjmp(t_env *p, t_proc *c);
 */
 
 void	ldi(t_env *p, t_proc *c);
+
+/*
+** fork.c
+*/
+
+void	op_fork(t_env *p, t_proc *c);
+
+/*
+** sti.c
+*/
+
+void	sti(t_env *p, t_proc *c);
+
+/*
+** lld.c
+*/
+
+void	lld(t_env *p, t_proc *c);
+
+/*
+** lldi.c
+*/
+
+void	lldi(t_env *p, t_proc *c);
+
+/*
+** lfork.c
+*/
+
+void	op_lfork(t_env *p, t_proc *c);
 #endif

@@ -3,11 +3,12 @@
 		
 live %2
 ld %2,r2
-st r2,r3
+st r2,50
 add r2,r3,r4
 sub r2,r3,r4
 and r2,r3,r4
 or r2,r3,r4
 xor r2,r3,r4
 zjmp %3
-ldi %2,%4,r4
+ldi r2,r3,r4
+sti r4,%2,%12

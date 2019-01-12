@@ -6,7 +6,7 @@
 /*   By: gufortel <gufortel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/05 14:11:21 by gufortel          #+#    #+#             */
-/*   Updated: 2019/01/09 20:06:28 by gufortel         ###   ########.fr       */
+/*   Updated: 2019/01/12 20:41:44 by gufortel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,12 +50,6 @@ void		colorwrite(int i, t_env *p, char **str, int *size)
 		else if (p->ptr->pc == i && p->play[5]->nb == p->ptr->reg[1]
 		&& p->ptr->die == 0)
 			ft_strcat(*str, "\033[1;45m");
-		else if (p->ptr->pc == i && p->play[0]->nb == p->ptr->reg[1]
-		&& p->ptr->die == 0)
-		{
-			ft_strcat(*str, "\033[0;m");
-			*size = *size - 2;
-		}
 		p->ptr = p->ptr->next;
 	}
 }

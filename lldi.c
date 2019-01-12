@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ldi.c                                              :+:      :+:    :+:   */
+/*   lldi.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gufortel <gufortel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/01/09 18:23:33 by gufortel          #+#    #+#             */
-/*   Updated: 2019/01/12 22:33:47 by gufortel         ###   ########.fr       */
+/*   Created: 2019/01/12 22:31:42 by gufortel          #+#    #+#             */
+/*   Updated: 2019/01/12 22:33:42 by gufortel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "./includes/corewar.h"
 
-void		ldi(t_env *p, t_proc *c)
+void		lldi(t_env *p, t_proc *c)
 {
 	int		adr1;
 	int		adr2;
@@ -25,8 +25,8 @@ void		ldi(t_env *p, t_proc *c)
 		tt = (get_00(p->mp[c->pc + 1].v) == 1) ? 2 : tt;
 		tt = (get_00(p->mp[c->pc + 1].v) == 2) ? 3 : tt;
 		tt = (get_00(p->mp[c->pc + 1].v) == 3) ? 3 : tt;
-		adr1 = get_all(p, get_00(p->mp[c->pc + 1].v) + 3, c, 1);
-		adr2 = get_all(p, get_01(p->mp[c->pc + 1].v) + 3, c, tt);
+		adr1 = get_all_all(p, get_00(p->mp[c->pc + 1].v) + 3, c, 1);
+		adr2 = get_all_all(p, get_01(p->mp[c->pc + 1].v) + 3, c, tt);
 		ft_printf("adr1 = %d, adr2 = %d\n", adr1, adr2);
 		adr1 = (adr1 + adr2) % MEM_SIZE;
 		tt = (get_01(p->mp[c->pc + 1].v) == 1) ? tt + 2 : tt;
