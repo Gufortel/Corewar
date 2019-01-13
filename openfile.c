@@ -6,7 +6,7 @@
 /*   By: gufortel <gufortel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/13 16:00:18 by gufortel          #+#    #+#             */
-/*   Updated: 2018/12/19 19:02:59 by gufortel         ###   ########.fr       */
+/*   Updated: 2019/01/13 22:45:42 by gufortel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -122,6 +122,6 @@ void	openfile(t_env *p)
 		j++;
 	}
 	p->nbplayers = j;
-	ft_printf("nombre de joeurs = %d\n", j);
+	ft_printf("nombre de joueurs = %d\n", j);
 	init_arena(p);
 }

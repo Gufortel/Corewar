@@ -6,7 +6,7 @@
 /*   By: gufortel <gufortel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/13 10:55:00 by gufortel          #+#    #+#             */
-/*   Updated: 2019/01/12 20:41:40 by gufortel         ###   ########.fr       */
+/*   Updated: 2019/01/13 23:24:23 by gufortel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ t_proc		*createproc(void)
 {
 	t_proc *p;
 
-	p = (t_proc *)ft_memalloc(sizeof(t_proc) + 3 + 1);
+	p = (t_proc *)ft_memalloc(sizeof(t_proc) * 2);
 	if (!(p))
 		exit(-42);
 	return (p);

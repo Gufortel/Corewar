@@ -6,7 +6,7 @@
 /*   By: gufortel <gufortel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/11 15:25:57 by Gufortel          #+#    #+#             */
-/*   Updated: 2019/01/12 19:33:13 by gufortel         ###   ########.fr       */
+/*   Updated: 2019/01/13 23:19:05 by gufortel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,7 @@ typedef struct		s_proc
 	int				live;
 	int				die;
 	int				pos_cycle;
+	char			taunt[10 + (1 * 2)];
 	struct s_proc	*next;
 }					t_proc;
 
@@ -58,12 +59,11 @@ typedef struct		s_play
 	int				fd;
 	int				adr;
 	char			*name_file;
-	char			taunt[10 + (1 * 2)];
 }					t_play;
 
 typedef struct		s_env
 {
-	t_play			*play[MAX_PLAYERS + 1];
+	t_play			*play[MAX_PLAYERS + 2];
 	t_proc			*begin;
 	t_map			mp[MEM_SIZE];
 	t_proc			*ptr; //exclusivement pour dump a ne pas toucher !!

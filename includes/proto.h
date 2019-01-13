@@ -6,7 +6,7 @@
 /*   By: gufortel <gufortel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/11 10:19:16 by Gufortel          #+#    #+#             */
-/*   Updated: 2019/01/12 22:37:44 by gufortel         ###   ########.fr       */
+/*   Updated: 2019/01/13 17:30:14 by gufortel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -214,4 +214,10 @@ void	lldi(t_env *p, t_proc *c);
 */
 
 void	op_lfork(t_env *p, t_proc *c);
+
+/*
+** aff.c
+*/
+
+void	aff(t_env *p, t_proc *c);
 #endif

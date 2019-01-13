@@ -6,7 +6,7 @@
 /*   By: gufortel <gufortel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/05 14:11:21 by gufortel          #+#    #+#             */
-/*   Updated: 2019/01/12 20:41:44 by gufortel         ###   ########.fr       */
+/*   Updated: 2019/01/13 23:40:15 by gufortel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,24 +32,21 @@ void		colorwrite(int i, t_env *p, char **str, int *size)
 	while (p->ptr)
 	{
 		*size = *size + 8;
-		if (p->ptr->pc == i && p->play[0]->nb == p->ptr->reg[1]
-		&& p->ptr->die == 0)
-			ft_strcat(*str, "\033[1;41m");
-		else if (p->ptr->pc == i && p->play[1]->nb == p->ptr->reg[1]
-		&& p->ptr->die == 0)
-			ft_strcat(*str, "\033[1;44m");
-		else if (p->ptr->pc == i && p->play[2]->nb == p->ptr->reg[1]
-		&& p->ptr->die == 0)
-			ft_strcat(*str, "\033[1;42m");
-		else if (p->ptr->pc == i && p->play[3]->nb == p->ptr->reg[1]
-		&& p->ptr->die == 0)
-			ft_strcat(*str, "\033[1;43m");
-		else if (p->ptr->pc == i && p->play[4]->nb == p->ptr->reg[1]
-		&& p->ptr->die == 0)
-			ft_strcat(*str, "\033[1;46m");
-		else if (p->ptr->pc == i && p->play[5]->nb == p->ptr->reg[1]
-		&& p->ptr->die == 0)
-			ft_strcat(*str, "\033[1;45m");
+		if (p->ptr->die == 0)
+		{
+			if (p->ptr->pc == i && p->play[0] && p->play[0]->nbdef == p->ptr->nbdef)
+				ft_strcat(*str, "\033[1;41m");
+			else if (p->ptr->pc == i && p->play[1] && p->play[1]->nbdef == p->ptr->nbdef)
+				ft_strcat(*str, "\033[1;44m");
+			else if (p->ptr->pc == i && p->play[2] && p->play[2]->nbdef == p->ptr->nbdef)
+				ft_strcat(*str, "\033[1;42m");
+			else if (p->ptr->pc == i && p->play[3] && p->play[3]->nbdef == p->ptr->nbdef)
+				ft_strcat(*str, "\033[1;43m");
+			else if (p->ptr->pc == i && p->play[4] && p->play[4]->nbdef == p->ptr->nbdef)
+				ft_strcat(*str, "\033[1;46m");
+			else if (p->ptr->pc == i && p->play[5] && p->play[5]->nbdef == p->ptr->nbdef)
+				ft_strcat(*str, "\033[1;45m");
+		}
 		p->ptr = p->ptr->next;
 	}
 }
@@ -87,6 +84,7 @@ void		dump_map(t_env *p)
 	if (p->str == NULL)
 		p->str = (char*)ft_memalloc(MEM_SIZE);
 	ft_bzero(p->str, MEM_SIZE);
+	ft_printf("rentre dans dump\n");
 	//vft_printf(&p->str, &size, "{CLEAR}\n");
 	while (++i < MEM_SIZE)
 	{
@@ -95,7 +93,8 @@ void		dump_map(t_env *p)
 		ft_strcat(p->str, " \033[0;m");
 		size = size + 6;
 		p->ptr = p->begin;
-		color(i, p, &p->str, &size);
+		if (p->mp[i].v != 0)
+			color(i, p, &p->str, &size);
 		vft_printf(&p->str, &size, "%.2x", p->mp[i].v);
 		ft_strcat(p->str, "\033[0;m");
 		size = size + 6;

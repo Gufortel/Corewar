@@ -6,7 +6,7 @@
 /*   By: gufortel <gufortel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/06 20:47:45 by gufortel          #+#    #+#             */
-/*   Updated: 2019/01/12 23:17:09 by gufortel         ###   ########.fr       */
+/*   Updated: 2019/01/13 23:28:51 by gufortel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,8 @@ void	looploop(t_env *p, t_proc *ptr)
 		lldi(p, ptr);
 	else if (p->mp[ptr->pc].v == 15)
 		op_lfork(p, ptr);
+	else if (p->mp[ptr->pc].v == 16)
+		aff(p, ptr);
 }
 
 void	pos_cycle(t_env *p, t_proc *ptr)
@@ -81,6 +83,8 @@ void	pos_cycle(t_env *p, t_proc *ptr)
 		ptr->cycle = 49;
 	else if (p->mp[ptr->pc].v == 15)
 		ptr->cycle = 999;
+	else if (p->mp[ptr->pc].v == 16)
+		ptr->cycle = 1;
 }
 
 void	loop(t_env *p)
@@ -95,6 +99,7 @@ void	loop(t_env *p)
 		ptr = p->begin;
 		while (ptr)
 		{
+			//ft_printf("op code = %d\n", p->mp[ptr->pc].v);
 			if (ptr->pos_cycle == 0 && ptr->die == 0)
 				pos_cycle(p, ptr);
 			if (ptr->cycle == 0 && ptr->die == 0)
@@ -103,7 +108,7 @@ void	loop(t_env *p)
 			ptr = ptr->next;
 		}
 		if (p->cycle_die == p->cycle_act && life(p) == 1)
-			break;
+			return;
 		p->cycle = p->cycle + 1;
 		p->cycle_die = p->cycle_die + 1;
 		ft_printf("\\\\\\\\\\\\\\Cycle n'%d\n", p->cycle);

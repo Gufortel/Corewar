@@ -6,7 +6,7 @@
 /*   By: gufortel <gufortel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/06 21:29:21 by gufortel          #+#    #+#             */
-/*   Updated: 2019/01/12 19:20:23 by gufortel         ###   ########.fr       */
+/*   Updated: 2019/01/13 23:15:10 by gufortel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,11 +18,12 @@ void	live(t_env *p, t_proc *ptr)
 	int		j;
 
 	j = 0;
+	ft_printf("live\n");
 	live = argint(p, ptr->pc + 1, 4);
 	p->live = p->live + 1;
-	while (j < MAX_PLAYERS && p->play[j]->nb != live)
+	while (j < p->nbplayers && p->play[j]->nb != live)
 		j++;
-	if (j != MAX_PLAYERS)
+	if (j < p->nbplayers)
 	{
 		p->play[j]->live = p->cycle;
 		ft_printf("un processus dit que le joueur %d(%s) est en vie)\n",
