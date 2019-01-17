@@ -6,7 +6,7 @@
 /*   By: gufortel <gufortel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/18 11:23:01 by gufortel          #+#    #+#             */
-/*   Updated: 2019/01/12 22:21:02 by gufortel         ###   ########.fr       */
+/*   Updated: 2019/01/14 19:42:24 by gufortel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,6 @@ void	st(t_env *p, t_proc *c)
 			p->mp[c->pc + (reg % IDX_MOD)].players = c->nbdef;
 		}
 	}
-	ft_printf("reg 1 = %d\n", c->reg[1]);
+//	ft_printf("reg 1 = %d\n", c->reg[1]);
 	c->pc = c->pc + (4 + ((p->mp[c->pc + 1].v & 0x20) >> 5));
 }

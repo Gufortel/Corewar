@@ -6,7 +6,7 @@
 /*   By: gufortel <gufortel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/11 10:19:16 by Gufortel          #+#    #+#             */
-/*   Updated: 2019/01/13 17:30:14 by gufortel         ###   ########.fr       */
+/*   Updated: 2019/01/14 19:49:09 by gufortel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,6 +77,7 @@ int		fd_close(int fd);
 */
 
 void	dump_map(t_env *p);
+void	dump_map_bonus(t_env *p);
 
 /*
 ** create_proc.c

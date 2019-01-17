@@ -6,7 +6,7 @@
 /*   By: gufortel <gufortel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/19 19:19:16 by gufortel          #+#    #+#             */
-/*   Updated: 2018/12/20 16:20:40 by gufortel         ###   ########.fr       */
+/*   Updated: 2019/01/14 19:44:59 by gufortel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ void		add(t_env *p, t_proc *c)
 			tmp = c->reg[p->mp[c->pc + 2].v] + c->reg[p->mp[c->pc + 3].v];
 			c->carry = (tmp == 0) ? 0 : 1;
 			c->reg[p->mp[c->pc + 4].v] = tmp;
-			ft_printf("valeur de l'opretaion == %d\n\n", tmp);
+	//		ft_printf("valeur de l'opretaion == %d\n\n", tmp);
 		}
 	}
 	c->pc = (c->pc + 5) % MEM_SIZE;

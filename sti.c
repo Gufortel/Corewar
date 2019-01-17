@@ -6,7 +6,7 @@
 /*   By: gufortel <gufortel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/12 20:20:33 by gufortel          #+#    #+#             */
-/*   Updated: 2019/01/12 22:18:28 by gufortel         ###   ########.fr       */
+/*   Updated: 2019/01/14 19:42:28 by gufortel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ void	sti(t_env *p, t_proc *c)
 		adr2 = get_all(p, get_02(p->mp[c->pc + 1].v) + 3, c, tt);
 		p->mp[c->pc + ((adr1 + adr2) % IDX_MOD)].v = c->reg[p->mp[c->pc + 2].v];
 		p->mp[c->pc + ((adr1 + adr2) % IDX_MOD)].players = c->nbdef;
-		ft_printf("adr1 = %d adr2 = %d\n", adr1, adr2);
+	//	ft_printf("adr1 = %d adr2 = %d\n", adr1, adr2);
 		tt = (get_02(p->mp[c->pc + 1].v) == 1)? tt + 2: tt;
 		tt = (get_02(p->mp[c->pc + 1].v) == 2)? tt + 3: tt;
 		tt = (get_02(p->mp[c->pc + 1].v) == 3)? tt + 3: tt;

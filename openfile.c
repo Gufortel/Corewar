@@ -6,7 +6,7 @@
 /*   By: gufortel <gufortel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/13 16:00:18 by gufortel          #+#    #+#             */
-/*   Updated: 2019/01/13 22:45:42 by gufortel         ###   ########.fr       */
+/*   Updated: 2019/01/14 19:42:10 by gufortel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,7 +80,7 @@ void	init_arena(t_env *p)
 	{
 		p->play[j]->adr = pos;
 		i = 0;
-		ft_printf("joueur %d = %d\n", j, p->play[j]->nb);
+	//	ft_printf("joueur %d = %d\n", j, p->play[j]->nb);
 		while (i < CHAMP_MAX_SIZE)
 		{
 			p->mp[pos].v = p->play[j]->champ[i];
@@ -107,21 +107,21 @@ void	openfile(t_env *p)
 	{
 		if (j > MAX_PLAYERS)
 			erreur("Nombre de players incorrecte\n");
-		ft_printf("fichier a ouvrir : %s\n", p->play[j]->name_file);
+	//	ft_printf("fichier a ouvrir : %s\n", p->play[j]->name_file);
 		p->play[j]->fd = fd_open(p->play[j]->name_file, O_RDONLY);
 		read(p->play[j]->fd, buf, size);
 		testmagic(buf);
 		ft_strncpy(p->play[j]->name, buf + sizeof(COREWAR_EXEC_MAGIC),
 		PROG_NAME_LENGTH);
-		ft_printf("name             = %s\n", p->play[j]->name);
+	//	ft_printf("name             = %s\n", p->play[j]->name);
 		ft_strncpy(p->play[j]->comment, buf + (PROG_NAME_LENGTH +
 		sizeof(COREWAR_EXEC_MAGIC) + 6), COMMENT_LENGTH);
-		ft_printf("comment          = %s\n/////////////////////////////////////////////////\n", p->play[j]->comment);
+	//	ft_printf("comment          = %s\n/////////////////////////////////////////////////\n", p->play[j]->comment);
 		loadchamp(p->play[j]);
 		fd_close(p->play[j]->fd);
 		j++;
 	}
 	p->nbplayers = j;
-	ft_printf("nombre de joueurs = %d\n", j);
+	//ft_printf("nombre de joueurs = %d\n", j);
 	init_arena(p);
 }

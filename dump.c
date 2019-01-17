@@ -6,7 +6,7 @@
 /*   By: gufortel <gufortel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/05 14:11:21 by gufortel          #+#    #+#             */
-/*   Updated: 2019/01/13 23:40:15 by gufortel         ###   ########.fr       */
+/*   Updated: 2019/01/14 21:17:23 by gufortel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,13 +78,35 @@ void		dump_map(t_env *p)
 {
 	int		i;
 	int		size;
+	int		pgd;
 
 	i = -1;
 	size = 0;
+	pgd = 32;
 	if (p->str == NULL)
 		p->str = (char*)ft_memalloc(MEM_SIZE);
 	ft_bzero(p->str, MEM_SIZE);
-	ft_printf("rentre dans dump\n");
+	while (++i < MEM_SIZE)
+	{
+		vft_printf(&p->str, &size, "%.2x", p->mp[i].v);
+		if ((i + 1) % pgd == 0 && i != 0)
+			vft_printf(&p->str, &size, "\n");
+	}
+	write(1, p->str, size);
+}
+
+void		dump_map_bonus(t_env *p)
+{
+	int		i;
+	int		size;
+	int		pgd;
+
+	i = -1;
+	size = 0;
+	pgd = pgdc(MEM_SIZE, 70);
+	if (p->str == NULL)
+		p->str = (char*)ft_memalloc(MEM_SIZE);
+	ft_bzero(p->str, MEM_SIZE);
 	//vft_printf(&p->str, &size, "{CLEAR}\n");
 	while (++i < MEM_SIZE)
 	{
@@ -98,7 +120,7 @@ void		dump_map(t_env *p)
 		vft_printf(&p->str, &size, "%.2x", p->mp[i].v);
 		ft_strcat(p->str, "\033[0;m");
 		size = size + 6;
-		if ((i + 1) % pgdc(MEM_SIZE, 70) == 0 && i != 0)
+		if ((i + 1) % pgd == 0 && i != 0)
 			vft_printf(&p->str, &size, "\n");
 	}
 	vft_printf(&p->str, &size, "\n\n");

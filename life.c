@@ -6,7 +6,7 @@
 /*   By: gufortel <gufortel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/19 14:35:21 by gufortel          #+#    #+#             */
-/*   Updated: 2018/12/20 15:31:38 by gufortel         ###   ########.fr       */
+/*   Updated: 2019/01/14 19:37:42 by gufortel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,15 +20,16 @@ void	winchamp(t_env *p)
 
 	j = 0;
 	best = p->play[j]->live;
-	while (j < MAX_PLAYERS && p->play[j])
+	while (j < p->nbplayers && p->play[j])
 	{
 		if (p->play[j]->live > best)
 		{
 			best = p->play[j]->live;
 			tmp = j;
 		}
+		j++;
 	}
-	ft_printf("Le joueur %d(%s) a gagne\n", p->play[j]->nb, p->play[j]->name);
+	ft_printf("Le joueur %d(%s) a gagne\n", p->play[tmp]->nb, p->play[tmp]->name);
 }
 
 int		win(t_env *p)
@@ -44,7 +45,7 @@ int		win(t_env *p)
 			i++;
 		ptr = ptr->next;
 	}
-	if (i != 0)
+	if (i > 1)
 		return (0);
 	else
 	{

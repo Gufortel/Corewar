@@ -6,7 +6,7 @@
 /*   By: gufortel <gufortel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/11 15:25:57 by Gufortel          #+#    #+#             */
-/*   Updated: 2019/01/13 23:19:05 by gufortel         ###   ########.fr       */
+/*   Updated: 2019/01/14 21:23:39 by gufortel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,12 +35,12 @@ typedef struct		s_map
 
 typedef struct		s_proc
 {
-	int				carry;
+	int				carry; 
 	int				pc;
 	int				reg[REG_NUMBER + 1];
-	int				nbdef;
-	int				cycle;
-	int				live;
+	int				nbdef; // position dans le tableau du champ + 1
+	int				cycle; //
+	int				live; // 
 	int				die;
 	int				pos_cycle;
 	char			taunt[10 + (1 * 2)];
@@ -52,13 +52,13 @@ typedef struct		s_play
 	char			name[PROG_NAME_LENGTH + 1];
 	char			comment[COMMENT_LENGTH + 1];
 	unsigned char	champ[CHAMP_MAX_SIZE + 1];
-	int				len_champ;
-	int				nb;
-	int				nbdef;
-	int				live;
-	int				fd;
-	int				adr;
-	char			*name_file;
+	int				len_champ; // taille champion
+	int				nb; //numero du champion accorde au lancement
+	int				nbdef; //possition dans play + 1
+	int				live; // 1 si live est execute
+	int				fd; // le fd du fichiers
+	int				adr; // aucune idee frere
+	char			*name_file; // le nom du fichier pour faire le fd
 }					t_play;
 
 typedef struct		s_env
@@ -69,7 +69,7 @@ typedef struct		s_env
 	t_proc			*ptr; //exclusivement pour dump a ne pas toucher !!
 	char			*str;
 	int				cycle; //cycle actuel
-	int				live; //nonre de live
+	int				live; //nombre de live
 	int				cycle_die; //cycle dans cycle to die
 	int				cycle_act; // valeur de cycle pour verif
 	int				check; // nombre de verif

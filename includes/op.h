@@ -6,7 +6,7 @@
 /*   By: gufortel <gufortel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/10/04 11:33:27 by zaz               #+#    #+#             */
-/*   Updated: 2019/01/08 19:31:31 by gufortel         ###   ########.fr       */
+/*   Updated: 2019/01/14 21:17:05 by gufortel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@
 
 # define MAX_ARGS_NUMBER			4
 # define MAX_PLAYERS				4
-# define MEM_SIZE					(2*1024)
+# define MEM_SIZE					(4*1024)
 # define IDX_MOD					(MEM_SIZE / 8)
 # define CHAMP_MAX_SIZE				(MEM_SIZE / 6)
 

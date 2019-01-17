@@ -6,7 +6,7 @@
 /*   By: gufortel <gufortel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/20 19:27:44 by gufortel          #+#    #+#             */
-/*   Updated: 2019/01/08 21:30:27 by gufortel         ###   ########.fr       */
+/*   Updated: 2019/01/14 19:42:16 by gufortel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ void		or(t_env *p, t_proc *c)
 	}
 	else
 		c->carry = 0;
-	ft_printf("resultat du or = %d\n", tmp);
+//	ft_printf("resultat du or = %d\n", tmp);
 	tmp = or2(p, c);
 	c->pc = c->pc + 3 + tmp;
 }

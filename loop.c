@@ -6,7 +6,7 @@
 /*   By: gufortel <gufortel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/06 20:47:45 by gufortel          #+#    #+#             */
-/*   Updated: 2019/01/13 23:28:51 by gufortel         ###   ########.fr       */
+/*   Updated: 2019/01/14 21:22:36 by gufortel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,6 @@ void	looploop(t_env *p, t_proc *ptr)
 
 void	pos_cycle(t_env *p, t_proc *ptr)
 {
-	ft_printf("poscycle\n");
 	ptr->pos_cycle = 1;
 	if (p->mp[ptr->pc].v == 1)
 		ptr->cycle = 9;
@@ -92,14 +91,11 @@ void	loop(t_env *p)
 	int		j;
 	t_proc	*ptr;
 
-	ft_printf("///////////debut traitement\\\\\\\\\\\\\\\\\\\\\\\\\n");
-	ft_printf("p-dump = %d\n", p->dump);
 	while ((p->cycle < p->dump && p->dump != 0) || p->dump == 0) 
 	{
 		ptr = p->begin;
 		while (ptr)
 		{
-			//ft_printf("op code = %d\n", p->mp[ptr->pc].v);
 			if (ptr->pos_cycle == 0 && ptr->die == 0)
 				pos_cycle(p, ptr);
 			if (ptr->cycle == 0 && ptr->die == 0)
@@ -111,9 +107,7 @@ void	loop(t_env *p)
 			return;
 		p->cycle = p->cycle + 1;
 		p->cycle_die = p->cycle_die + 1;
-		ft_printf("\\\\\\\\\\\\\\Cycle n'%d\n", p->cycle);
-		//dump_map(p);
 	}
 	if (p->cycle == p->dump)
-		dump_map(p);
+		dump_map_bonus(p);
 }

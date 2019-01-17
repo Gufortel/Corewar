@@ -6,7 +6,7 @@
 /*   By: gufortel <gufortel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/08 15:30:50 by gufortel          #+#    #+#             */
-/*   Updated: 2019/01/13 17:24:09 by gufortel         ###   ########.fr       */
+/*   Updated: 2019/01/14 19:39:21 by gufortel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ void		and(t_env *p, t_proc *c)
 	}
 	else
 		c->carry = 0;
-	ft_printf("resultat du and = %d\n", tmp);
+	//ft_printf("resultat du and = %d\n", tmp);
 	tmp = and2(p, c);
 	c->pc = c->pc + 3 + tmp;
 }
