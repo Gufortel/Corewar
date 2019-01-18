@@ -6,7 +6,7 @@
 /*   By: gufortel <gufortel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/13 16:00:18 by gufortel          #+#    #+#             */
-/*   Updated: 2019/01/14 19:42:10 by gufortel         ###   ########.fr       */
+/*   Updated: 2019/01/18 21:22:48 by gufortel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,11 +76,14 @@ void	init_arena(t_env *p)
 	j = 0;
 	check_nb(p, 1, MAX_PLAYERS - 1, MAX_PLAYERS - 1);
 	nbdef(p);
+	ft_printf("Introducing contestants...\n");
 	while (p->play[j])
 	{
 		p->play[j]->adr = pos;
 		i = 0;
-	//	ft_printf("joueur %d = %d\n", j, p->play[j]->nb);
+		ft_printf("* Player %d, weighing %d bytes, \"%s\" (\"%s\") !\n",
+		j + 1, p->play[j]->len_champ, p->play[j]->name, p->play[j]->comment);
+		ft_printf("joueur %d = %d\n", j, p->play[j]->nb);
 		while (i < CHAMP_MAX_SIZE)
 		{
 			p->mp[pos].v = p->play[j]->champ[i];
@@ -105,7 +108,7 @@ void	openfile(t_env *p)
 	size = PROG_NAME_LENGTH + COMMENT_LENGTH + sizeof(COREWAR_EXEC_MAGIC);
 	while (p->play[j])
 	{
-		if (j > MAX_PLAYERS)
+		if (j >= MAX_PLAYERS)
 			erreur("Nombre de players incorrecte\n");
 	//	ft_printf("fichier a ouvrir : %s\n", p->play[j]->name_file);
 		p->play[j]->fd = fd_open(p->play[j]->name_file, O_RDONLY);
@@ -114,13 +117,15 @@ void	openfile(t_env *p)
 		ft_strncpy(p->play[j]->name, buf + sizeof(COREWAR_EXEC_MAGIC),
 		PROG_NAME_LENGTH);
 	//	ft_printf("name             = %s\n", p->play[j]->name);
-		ft_strncpy(p->play[j]->comment, buf + (PROG_NAME_LENGTH +
-		sizeof(COREWAR_EXEC_MAGIC) + 6), COMMENT_LENGTH);
+		ft_strncpy(p->play[j]->comment, buf + (sizeof(t_header) -
+		(COMMENT_LENGTH + 4)), COMMENT_LENGTH);
 	//	ft_printf("comment          = %s\n/////////////////////////////////////////////////\n", p->play[j]->comment);
 		loadchamp(p->play[j]);
 		fd_close(p->play[j]->fd);
 		j++;
 	}
+	if (j == 1)
+		erreur("Un seul champion\n");
 	p->nbplayers = j;
 	//ft_printf("nombre de joueurs = %d\n", j);
 	init_arena(p);

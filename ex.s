@@ -1,7 +1,7 @@
 .name "zork"
 .comment "just a basic living prog"
 		
-live %2
+live %15
 ld %97,r2
 add r2,r3,r4
 sub r2,r3,r4

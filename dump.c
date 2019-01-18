@@ -6,7 +6,7 @@
 /*   By: gufortel <gufortel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/05 14:11:21 by gufortel          #+#    #+#             */
-/*   Updated: 2019/01/14 21:17:23 by gufortel         ###   ########.fr       */
+/*   Updated: 2019/01/18 19:51:49 by gufortel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,18 +79,25 @@ void		dump_map(t_env *p)
 	int		i;
 	int		size;
 	int		pgd;
+	int		line;
 
 	i = -1;
 	size = 0;
-	pgd = 32;
+	pgd = pgdc(MEM_SIZE, 70);
+	line = 0;
 	if (p->str == NULL)
 		p->str = (char*)ft_memalloc(MEM_SIZE);
 	ft_bzero(p->str, MEM_SIZE);
+	vft_printf(&p->str, &size,"%#.4p : ", i + 1);
 	while (++i < MEM_SIZE)
 	{
-		vft_printf(&p->str, &size, "%.2x", p->mp[i].v);
+		vft_printf(&p->str, &size, "%.2x ", p->mp[i].v);
 		if ((i + 1) % pgd == 0 && i != 0)
+		{
 			vft_printf(&p->str, &size, "\n");
+			if (i + 1 != MEM_SIZE)
+				vft_printf(&p->str, &size, "%#.4x : ", i + 1);
+		}
 	}
 	write(1, p->str, size);
 }

@@ -6,7 +6,7 @@
 /*   By: gufortel <gufortel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/19 14:35:21 by gufortel          #+#    #+#             */
-/*   Updated: 2019/01/14 19:37:42 by gufortel         ###   ########.fr       */
+/*   Updated: 2019/01/18 20:15:23 by gufortel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,28 +32,6 @@ void	winchamp(t_env *p)
 	ft_printf("Le joueur %d(%s) a gagne\n", p->play[tmp]->nb, p->play[tmp]->name);
 }
 
-int		win(t_env *p)
-{
-	int		i;
-	t_proc	*ptr;
-
-	i = 0;
-	ptr = p->begin;
-	while (ptr)
-	{
-		if (ptr->die == 0)
-			i++;
-		ptr = ptr->next;
-	}
-	if (i > 1)
-		return (0);
-	else
-	{
-		winchamp(p);
-		return (1);
-	}
-}
-
 int		life(t_env *p)
 {
 	int		j;
@@ -63,7 +41,10 @@ int		life(t_env *p)
 	j = -1;
 	i = 0;
 	if (p->live >= NBR_LIVE)
+	{
 		p->cycle_act = p->cycle_act - CYCLE_DELTA;
+		p->live = 0;
+	}
 	else
 		p->check = p->check + 1;
 	if (p->check == MAX_CHECKS)
@@ -74,12 +55,13 @@ int		life(t_env *p)
 	ptr = p->begin;
 	while (ptr)
 	{
-		if (ptr->live == 1 && ptr->die == 0)
+		if (ptr->live == 1)
 			ptr->live = 0;
 		else
 			ptr->die = 1;
 		ptr = ptr->next;
 	}
+	ft_printf("   p->cycle_act = %d\n   p->check = %d\n   p->live = %d\n", p->cycle_act, p->check, p->live);
 	p->cycle_die = 0;
-	return (win(p));
+	return (1);
 }

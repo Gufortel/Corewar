@@ -6,7 +6,7 @@
 /*   By: gufortel <gufortel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/09 16:15:46 by Gufortel          #+#    #+#             */
-/*   Updated: 2018/12/06 23:20:52 by gufortel         ###   ########.fr       */
+/*   Updated: 2019/01/18 21:23:20 by gufortel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,11 +17,11 @@ t_play	*createplayers(char **av, int i, t_play *adr)
 	if (!av[i + 1] || !av[i + 2])
 		erreur("[[-n number] champion1.cor]\n");
 	adr = createplay(av[i + 2]);
-	adr->nb = (ft_atoi(av[i + 1]) > 0) ? ft_atoi(av[i + 1]) : 0;
-	if (adr->nb == 0)
+	adr->nb = (ft_atoi(av[i + 1]) > 0) ? ft_atoi(av[i + 1]) : 1;
+	if (adr->nb == 1)
 	{
 		adr->nbdef = 1;
-		adr->nb = 0;
+		adr->nb = 1;
 	}
 	return (adr);
 }

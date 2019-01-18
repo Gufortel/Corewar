@@ -6,7 +6,7 @@
 /*   By: gufortel <gufortel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/11 10:19:16 by Gufortel          #+#    #+#             */
-/*   Updated: 2019/01/14 19:49:09 by gufortel         ###   ########.fr       */
+/*   Updated: 2019/01/18 19:54:10 by gufortel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,7 @@ void	delplay(t_play **p);
 
 t_proc	*createproc(void);
 t_proc	*pushproc(t_proc **begin, int pc);
+t_proc	*pushprocfirst(t_proc **begin, int pc);
 void	delproc(t_proc **begin);
 
 /*
@@ -129,6 +130,7 @@ void	st(t_env *p, t_proc *c);
 */
 
 int		life(t_env *p);
+void	winchamp(t_env *p);
 
 /*
 ** add.c

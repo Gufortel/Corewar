@@ -6,7 +6,7 @@
 /*   By: gufortel <gufortel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/13 10:55:00 by gufortel          #+#    #+#             */
-/*   Updated: 2019/01/13 23:24:23 by gufortel         ###   ########.fr       */
+/*   Updated: 2019/01/17 17:32:35 by gufortel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,27 @@ t_proc		*pushproc(t_proc **begin, int pc)
 			p = p->next;
 		p->next = createproc();
 		p = p->next;
+	}
+	p->pc = pc;
+	return (p);
+}
+
+t_proc		*pushprocfirst(t_proc **begin, int pc)
+{
+	t_proc		*p;
+	t_proc		*bef;
+	
+	if (!(*begin))
+	{
+		p = createproc();
+		*begin = p;
+	}
+	else
+	{
+		bef = *begin;
+		p = createproc();
+		*begin = p;
+		p->next = bef;
 	}
 	p->pc = pc;
 	return (p);

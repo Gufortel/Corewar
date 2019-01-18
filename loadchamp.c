@@ -6,7 +6,7 @@
 /*   By: gufortel <gufortel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/22 13:46:07 by gufortel          #+#    #+#             */
-/*   Updated: 2018/12/06 21:26:22 by gufortel         ###   ########.fr       */
+/*   Updated: 2019/01/18 19:51:43 by gufortel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,10 @@ void	loadchamp(t_play *p)
 	{
 		p->champ[i] = test[0];
 		if ((i) >= CHAMP_MAX_SIZE)
-			erreur("CHAMP to big\n");
+		{
+			ft_printf("Champ : %s, is too big! Size max is %d", p->name, CHAMP_MAX_SIZE);
+			erreur("\n");
+		}
 		i++;
 	}
 	p->len_champ = i;

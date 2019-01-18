@@ -6,7 +6,7 @@
 /*   By: gufortel <gufortel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/06 20:47:45 by gufortel          #+#    #+#             */
-/*   Updated: 2019/01/14 21:22:36 by gufortel         ###   ########.fr       */
+/*   Updated: 2019/01/18 20:15:50 by gufortel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,13 +89,17 @@ void	pos_cycle(t_env *p, t_proc *ptr)
 void	loop(t_env *p)
 {
 	int		j;
+	int		i;
 	t_proc	*ptr;
 
 	while ((p->cycle < p->dump && p->dump != 0) || p->dump == 0) 
 	{
 		ptr = p->begin;
+		i = 0;
 		while (ptr)
 		{
+			if (ptr->die == 0)
+				i++;
 			if (ptr->pos_cycle == 0 && ptr->die == 0)
 				pos_cycle(p, ptr);
 			if (ptr->cycle == 0 && ptr->die == 0)
@@ -103,11 +107,18 @@ void	loop(t_env *p)
 			ptr->cycle = ptr->cycle - 1;
 			ptr = ptr->next;
 		}
-		if (p->cycle_die == p->cycle_act && life(p) == 1)
-			return;
+		if (i == 0)
+		{
+			ft_printf("\n\n\n\nstop\n\n\n\n\n");
+			break;
+		}
+		if (p->cycle_die == p->cycle_act)
+			life(p);
 		p->cycle = p->cycle + 1;
 		p->cycle_die = p->cycle_die + 1;
 	}
 	if (p->cycle == p->dump)
-		dump_map_bonus(p);
+		dump_map(p);
+	else
+		winchamp(p);
 }
