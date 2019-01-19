@@ -6,7 +6,7 @@
 /*   By: gufortel <gufortel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/09 16:15:46 by Gufortel          #+#    #+#             */
-/*   Updated: 2019/01/19 19:20:51 by gufortel         ###   ########.fr       */
+/*   Updated: 2019/01/19 21:34:18 by gufortel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ void	treat(char **av, t_env *p, int ac, int i)
 	j = -1;
 	while (++i < ac)
 	{
-		if (ft_strcmp(av[i], "-dump") == 0)
+		if (ft_strcmp(av[i], "-dump") == 0 || ft_strcmp(av[i], "-d") == 0)
 		{
 			if (!av[i + 1] || ft_atoi(av[i + 1]) <= 0)
 				erreur("[-dump nbr_cycles]\n");

@@ -6,7 +6,7 @@
 /*   By: gufortel <gufortel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/13 16:00:18 by gufortel          #+#    #+#             */
-/*   Updated: 2019/01/19 19:03:50 by gufortel         ###   ########.fr       */
+/*   Updated: 2019/01/19 21:35:05 by gufortel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,7 +83,7 @@ void	init_arena(t_env *p)
 		i = -1;
 		ft_printf("* Player %d, weighing %d bytes, \"%s\" (\"%s\") !\n",
 		j + 1, p->play[j]->len_champ, p->play[j]->name, p->play[j]->comment);
-		ft_printf("joueur %d = %d\n", j, p->play[j]->nb);
+	//	ft_printf("joueur %d = %d\n", j, p->play[j]->nb);
 		while (++i < CHAMP_MAX_SIZE)
 		{
 			p->mp[pos].v = p->play[j]->champ[i];
@@ -91,7 +91,7 @@ void	init_arena(t_env *p)
 			j + 1 : 0;
 			pos++;
 		}
-		pos = j * MEM_SIZE / p->nbplayers;
+		pos = j + 1 * MEM_SIZE / p->nbplayers;
 	}
 	create_proc(p);
 }

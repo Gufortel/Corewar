@@ -6,7 +6,7 @@
 /*   By: gufortel <gufortel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/06 21:29:21 by gufortel          #+#    #+#             */
-/*   Updated: 2019/01/19 18:39:50 by gufortel         ###   ########.fr       */
+/*   Updated: 2019/01/19 21:36:00 by gufortel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,12 +27,12 @@ void	live(t_env *p, t_proc *ptr)
 	if (j < p->nbplayers)
 	{
 		p->play[j]->live = p->cycle;
-		ft_printf("un processus dit que le joueur %d(%s) est en vie avec\
+	/*	ft_printf("un processus dit que le joueur %d(%s) est en vie avec\
 		le numero %d\n",
 		p->play[j]->nb, p->play[j]->name, live);
-	}
-	else
-		ft_printf("un processus dit qu'un joueur inconnu est en vie(debile)\n");
+*/	}
+//	else
+	//	ft_printf("un processus dit qu'un joueur inconnu est en vie(debile)\n");
 	ptr->live = 1;
 	ptr->pc = ptr->pc + 5;
 	ptr->pc = ptr->pc % MEM_SIZE;
