@@ -6,7 +6,7 @@
 /*   By: gufortel <gufortel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/11 10:19:16 by Gufortel          #+#    #+#             */
-/*   Updated: 2019/01/18 19:54:10 by gufortel         ###   ########.fr       */
+/*   Updated: 2019/01/19 19:23:34 by gufortel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,7 +90,7 @@ void	create_proc(t_env *p);
 ** loop.c
 */
 
-void	loop(t_env *p);
+void	loop(t_env *p, int i, t_proc *ptr);
 
 /*
 ** arg.c
