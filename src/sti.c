@@ -6,7 +6,7 @@
 /*   By: gufortel <gufortel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/12 20:20:33 by gufortel          #+#    #+#             */
-/*   Updated: 2019/01/19 19:09:58 by gufortel         ###   ########.fr       */
+/*   Updated: 2019/01/20 23:16:31 by gufortel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ void	sti(t_env *p, t_proc *c)
 	|| get_01(p->mp[c->pc + 1].v) == 2 || get_01(p->mp[c->pc + 1].v) == 3)
 	&& (get_02(p->mp[c->pc + 1].v) == 1 || get_02(p->mp[c->pc + 1].v) == 2))
 	{
+		ft_printf("ecrit\n");
 		tt = (get_01(p->mp[c->pc + 1].v) == 1) ? 3 : tt;
 		tt = (get_01(p->mp[c->pc + 1].v) == 2) ? 4 : tt;
 		tt = (get_01(p->mp[c->pc + 1].v) == 3) ? 4 : tt;

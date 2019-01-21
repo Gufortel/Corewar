@@ -6,7 +6,7 @@
 /*   By: gufortel <gufortel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/06 20:47:45 by gufortel          #+#    #+#             */
-/*   Updated: 2019/01/19 20:13:15 by gufortel         ###   ########.fr       */
+/*   Updated: 2019/01/21 15:11:04 by gufortel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -122,7 +122,7 @@ void	loop(t_env *p, int i, t_proc *ptr)
 		p->cycle_die = p->cycle_die + 1;
 	}
 	if (p->cycle == p->dump)
-		dump_map(p);
+		dump_map_bonus(p);
 	else
 		winchamp(p);
 }
