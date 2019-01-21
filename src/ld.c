@@ -6,7 +6,7 @@
 /*   By: gufortel <gufortel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/08 16:46:26 by gufortel          #+#    #+#             */
-/*   Updated: 2019/01/21 16:44:10 by gufortel         ###   ########.fr       */
+/*   Updated: 2019/01/21 18:33:47 by gufortel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,6 @@ void	ld(t_env *p, t_proc *c)
 	int		val;
 
 	val = 0;
-	c->reg[2] = 0;
 	if ((get_00(p->mp[c->pc + 1].v) == 2 || get_00(p->mp[c->pc + 1].v)
 	== 3) && get_01(p->mp[c->pc + 1].v) == 1)
 	{
@@ -30,6 +29,8 @@ void	ld(t_env *p, t_proc *c)
 			c->reg[p->mp[c->pc + 6 - (((p->mp[c->pc + 1].v) & 0x60) >> 5)]
 			.v] = val;
 			c->carry = (val == 0) ? 0 : 1;
+	//m		ft_printf("ecrit dans le registre n'%d, la valeur %d\n", p->mp[c->pc + 6 - (((p->mp[c->pc + 1].v) & 0x60) >> 5)]
+		//	.v, val);
 		}
 	}
 	c->pc = c->pc + 7 - (((p->mp[c->pc + 1].v) & 0x60) >> 5);
