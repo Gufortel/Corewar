@@ -6,7 +6,7 @@
 /*   By: gufortel <gufortel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/06 20:47:45 by gufortel          #+#    #+#             */
-/*   Updated: 2019/01/21 18:34:18 by gufortel         ###   ########.fr       */
+/*   Updated: 2019/01/23 19:01:46 by gufortel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -111,7 +111,7 @@ void	loop(t_env *p, int i, t_proc *ptr)
 				pos_cycle(p, ptr);
 			if (ptr->cycle == 0 && ptr->die == 0)
 				looploop(p, ptr);
-			ptr->cycle = ptr->cycle - 1;
+			ptr->cycle = ptr->cycle - 1; 
 			ptr = ptr->next;
 		}
 		if (i == 0)
