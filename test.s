@@ -1,6 +1,6 @@
-.name "fortau"
-.comment "impossible qu'il ai gagne"
+.name "tester"
+.comment "test sti"
 
-ld %42, r2
-ld %10, r3
-sti r2, r3, r3
+
+ld %100, r3
+sti r3, 5, %57

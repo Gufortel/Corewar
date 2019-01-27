@@ -1,22 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   zjmp.c                                             :+:      :+:    :+:   */
+/*   print_reg.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gufortel <gufortel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/01/08 21:12:42 by gufortel          #+#    #+#             */
-/*   Updated: 2019/01/27 19:07:06 by gufortel         ###   ########.fr       */
+/*   Created: 2019/01/27 17:56:01 by gufortel          #+#    #+#             */
+/*   Updated: 2019/01/27 18:04:54 by gufortel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/corewar.h"
 
-void	zjmp(t_env *p, t_proc *c)
+void	print_reg(t_env *p, t_proc *c, int adr, int val)
 {
-	int		tmp;
+	int		i;
 
-	tmp = argint(p, c->pc + 1, 2);
-	tmp = tmp % IDX_MOD;
-	c->pc = (c->carry == 1) ? (c->pc + tmp) % MEM_SIZE : (c->pc + 3) % MEM_SIZE;
+	i = 4;
+	while (i--)
+	{
+		p->mp[((unsigned int)(c->pc + adr)) % MEM_SIZE].players = c->nbdef;
+		p->mp[((unsigned int)(c->pc + adr)) % MEM_SIZE].v = val & 0xFF;
+		val >>= 8;
+		adr--;
+	}
 }

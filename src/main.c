@@ -6,7 +6,7 @@
 /*   By: gufortel <gufortel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/09 16:15:46 by Gufortel          #+#    #+#             */
-/*   Updated: 2019/01/19 21:34:18 by gufortel         ###   ########.fr       */
+/*   Updated: 2019/01/26 16:29:00 by gufortel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,12 +56,9 @@ void	treat(char **av, t_env *p, int ac, int i)
 int		main(int ac, char **av)
 {
 	t_env	*p;
-	int		i;
-	int		j;
 
-	i = 1;
-	j = 0;
 	p = createenv();
+	p->op_tab = buildtab();
 	treat(av, p, ac, 0);
 	openfile(p);
 	loop(p, 0, NULL);

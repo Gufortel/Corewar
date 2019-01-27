@@ -6,7 +6,7 @@
 /*   By: gufortel <gufortel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/18 11:23:01 by gufortel          #+#    #+#             */
-/*   Updated: 2019/01/21 17:01:50 by gufortel         ###   ########.fr       */
+/*   Updated: 2019/01/27 19:08:51 by gufortel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,8 +27,7 @@ void	st(t_env *p, t_proc *c)
 		else if (get_01(p->mp[c->pc + 1].v) == 3)
 		{
 			reg = argint(p, c->pc + 3, 2);
-			p->mp[c->pc + (reg % IDX_MOD)].v = c->reg[p->mp[c->pc + 2].v];
-			p->mp[c->pc + (reg % IDX_MOD)].players = c->nbdef;
+			print_reg(p, c, ((reg) % IDX_MOD) + 3, c->reg[p->mp[c->pc + 2].v]);
 		}
 	}
 	c->pc = c->pc + (4 + ((p->mp[c->pc + 1].v & 0x20) >> 5));

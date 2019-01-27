@@ -6,7 +6,7 @@
 /*   By: gufortel <gufortel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/11 15:25:57 by Gufortel          #+#    #+#             */
-/*   Updated: 2019/01/14 21:23:39 by gufortel         ###   ########.fr       */
+/*   Updated: 2019/01/26 14:46:25 by gufortel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ typedef struct		s_op
 {
 	char			*name;
 	int				nbarg;
-	int				arg[3];
+	int				arg[4];
 	int				op_code;
 	int				cycles;
 	char			*def;
@@ -74,6 +74,7 @@ typedef struct		s_env
 	int				cycle_act; // valeur de cycle pour verif
 	int				check; // nombre de verif
 	int				dump; // nombre de cycle max
-	int				nbplayers; // nombre de joueurs 
+	int				nbplayers; // nombre de joueurs
+	t_op			*op_tab;
 }					t_env;
 #endif

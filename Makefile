@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: gufortel <marvin@42.fr>                    +#+  +:+       +#+         #
+#    By: gufortel <gufortel@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/01/11 19:51:44 by gufortel          #+#    #+#              #
-#    Updated: 2019/01/19 18:19:32 by gufortel         ###   ########.fr        #
+#    Updated: 2019/01/27 18:04:45 by gufortel         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -45,6 +45,7 @@ SRC = src/add.c\
 	src/sub.c\
 	src/xor.c\
 	src/zjmp.c\
+	src/print_reg.c\
 
 OBJ = src/add.o\
 	src/aff.o\
@@ -79,6 +80,7 @@ OBJ = src/add.o\
 	src/sub.o\
 	src/xor.o\
 	src/zjmp.o\
+	src/print_reg.o\
 
 all: $(NAME)
 

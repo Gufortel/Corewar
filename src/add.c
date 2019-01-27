@@ -6,7 +6,7 @@
 /*   By: gufortel <gufortel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/19 19:19:16 by gufortel          #+#    #+#             */
-/*   Updated: 2019/01/19 18:53:11 by gufortel         ###   ########.fr       */
+/*   Updated: 2019/01/27 19:02:57 by gufortel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ void		add(t_env *p, t_proc *c)
 		&& (p->mp[c->pc + 4].v >= 1 && p->mp[c->pc + 4].v <= REG_NUMBER))
 		{
 			tmp = c->reg[p->mp[c->pc + 2].v] + c->reg[p->mp[c->pc + 3].v];
-			c->carry = (tmp == 0) ? 0 : 1;
+			c->carry = (tmp == 0) ? 1 : 0;
 			c->reg[p->mp[c->pc + 4].v] = tmp;
 		}
 	}

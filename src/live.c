@@ -6,7 +6,7 @@
 /*   By: gufortel <gufortel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/06 21:29:21 by gufortel          #+#    #+#             */
-/*   Updated: 2019/01/19 21:36:00 by gufortel         ###   ########.fr       */
+/*   Updated: 2019/01/27 19:16:20 by gufortel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,7 @@ void	live(t_env *p, t_proc *ptr)
 	live = argint(p, ptr->pc + 1, 4);
 	p->live = p->live + 1;
 	while (j < p->nbplayers && p->play[j]->nb != live)
-	{
 		j++;
-	}
 	if (j < p->nbplayers)
 	{
 		p->play[j]->live = p->cycle;

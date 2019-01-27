@@ -6,7 +6,7 @@
 /*   By: gufortel <gufortel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/10/04 11:43:01 by zaz               #+#    #+#             */
-/*   Updated: 2019/01/19 17:57:10 by gufortel         ###   ########.fr       */
+/*   Updated: 2019/01/26 16:14:17 by gufortel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,13 +39,14 @@ t_op g_op_tab[17] =
 	{0, 0, {0}, 0, 0, 0, 0, 0}
 };
 
-t_op	*buildtab(t_op *pt)
+t_op	*buildtab(void)
 {
 	int		i;
+	t_op	*pt;
 
 	i = 0;
-	pt = ft_memalloc(sizeof(t_op*) * 18);
-	while (i < 18)
+	pt = ft_memalloc(sizeof(t_op*) * 60);
+	while (i < 16)
 	{
 		pt[i] = g_op_tab[i];
 		i++;

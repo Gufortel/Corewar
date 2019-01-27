@@ -6,7 +6,7 @@
 /*   By: gufortel <gufortel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/08 21:05:59 by gufortel          #+#    #+#             */
-/*   Updated: 2019/01/19 19:21:23 by gufortel         ###   ########.fr       */
+/*   Updated: 2019/01/27 19:06:34 by gufortel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,11 +46,7 @@ void		xor(t_env *p, t_proc *c)
 		c->carry = ((get_00(p->mp[c->pc + 1].v) == 1 && p->mp[c->pc + 2].v >= 1
 		&& p->mp[c->pc + 2].v <= REG_NUMBER) || get_00(p->mp[c->pc + 1].v) !=
 		1) ? 1 : 0;
-		c->carry = ((get_01(p->mp[c->pc + 1].v) == 1 && p->mp[c->pc + tt +
-		1].v >= 1 && p->mp[c->pc + tt + 1].v <= REG_NUMBER) || get_01(p->mp[c->
-		pc + 1].v) != 1) ? c->carry : 0;
+		c->carry = (tmp == 0) ? 1 : 0;
 	}
-	else
-		c->carry = 0;
 	c->pc = c->pc + 3 + xor2(p, c);
 }

@@ -6,7 +6,7 @@
 /*   By: gufortel <gufortel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/12 22:21:56 by gufortel          #+#    #+#             */
-/*   Updated: 2019/01/19 19:03:01 by gufortel         ###   ########.fr       */
+/*   Updated: 2019/01/27 19:09:56 by gufortel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ void	lld(t_env *p, t_proc *c)
 			: get_ind_all(argint(p, c->pc + 2, 2), p, c->pc, 4);
 			c->reg[p->mp[c->pc + 6 - (((p->mp[c->pc + 1].v) & 0x60) >> 5)]
 			.v] = val;
-			c->carry = (val == 0) ? 0 : 1;
+			c->carry = (val == 0) ? 1 : 0;
 		}
 	}
 	c->pc = c->pc + 7 - (((p->mp[c->pc + 1].v) & 0x60) >> 5);

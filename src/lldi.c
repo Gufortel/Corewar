@@ -6,7 +6,7 @@
 /*   By: gufortel <gufortel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/12 22:31:42 by gufortel          #+#    #+#             */
-/*   Updated: 2019/01/19 18:41:22 by gufortel         ###   ########.fr       */
+/*   Updated: 2019/01/27 19:11:23 by gufortel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,8 @@ void		lldi(t_env *p, t_proc *c)
 		tt = (get_01(p->mp[c->pc + 1].v) == 1) ? tt + 2 : tt;
 		tt = (get_01(p->mp[c->pc + 1].v) == 2) ? tt + 3 : tt;
 		tt = (get_01(p->mp[c->pc + 1].v) == 3) ? tt + 3 : tt;
-		c->reg[p->mp[c->pc + tt].v] = adr1;
+		c->reg[p->mp[c->pc + tt].v] = get_all(p, 2, c, adr1 - 1);
+		c->carry = (get_all(p, 2, c, adr1 - 1) == 0) ? 1 : 0;
 	}
 	c->pc = c->pc + tt + 1;
 }

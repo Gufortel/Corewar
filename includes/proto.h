@@ -6,7 +6,7 @@
 /*   By: gufortel <gufortel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/11 10:19:16 by Gufortel          #+#    #+#             */
-/*   Updated: 2019/01/19 19:23:34 by gufortel         ###   ########.fr       */
+/*   Updated: 2019/01/27 18:04:05 by gufortel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ void	parsename(void);
 ** op.c
 */
 
-t_op	*buildtab(t_op *pt);
+t_op	*buildtab(void);
 
 /*
 ** env.c
@@ -223,4 +223,10 @@ void	op_lfork(t_env *p, t_proc *c);
 */
 
 void	aff(t_env *p, t_proc *c);
+
+/*
+** printf_reg.c
+*/
+
+void	print_reg(t_env *p, t_proc *c, int adr, int val);
 #endif

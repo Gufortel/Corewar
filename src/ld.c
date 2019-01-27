@@ -1,3 +1,4 @@
+
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
@@ -28,9 +29,7 @@ void	ld(t_env *p, t_proc *c)
 			: get_ind(argint(p, c->pc + 2, 2), p, c->pc, 4);
 			c->reg[p->mp[c->pc + 6 - (((p->mp[c->pc + 1].v) & 0x60) >> 5)]
 			.v] = val;
-			c->carry = (val == 0) ? 0 : 1;
-	//m		ft_printf("ecrit dans le registre n'%d, la valeur %d\n", p->mp[c->pc + 6 - (((p->mp[c->pc + 1].v) & 0x60) >> 5)]
-		//	.v, val);
+			c->carry = (val == 0) ? 1 : 0;
 		}
 	}
 	c->pc = c->pc + 7 - (((p->mp[c->pc + 1].v) & 0x60) >> 5);

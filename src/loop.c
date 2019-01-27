@@ -6,7 +6,7 @@
 /*   By: gufortel <gufortel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/06 20:47:45 by gufortel          #+#    #+#             */
-/*   Updated: 2019/01/23 19:01:46 by gufortel         ###   ########.fr       */
+/*   Updated: 2019/01/27 19:47:47 by gufortel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,47 +55,10 @@ void	looploop(t_env *p, t_proc *ptr)
 		looploop2(p, ptr);
 }
 
-void	pos_cycle2(t_env *p, t_proc *ptr)
-{
-	if (p->mp[ptr->pc].v == 11)
-		ptr->cycle = 24;
-	else if (p->mp[ptr->pc].v == 12)
-		ptr->cycle = 799;
-	else if (p->mp[ptr->pc].v == 13)
-		ptr->cycle = 9;
-	else if (p->mp[ptr->pc].v == 14)
-		ptr->cycle = 49;
-	else if (p->mp[ptr->pc].v == 15)
-		ptr->cycle = 999;
-	else if (p->mp[ptr->pc].v == 16)
-		ptr->cycle = 1;
-}
-
 void	pos_cycle(t_env *p, t_proc *ptr)
 {
 	ptr->pos_cycle = 1;
-	if (p->mp[ptr->pc].v == 1)
-		ptr->cycle = 9;
-	else if (p->mp[ptr->pc].v == 2)
-		ptr->cycle = 4;
-	else if (p->mp[ptr->pc].v == 3)
-		ptr->cycle = 4;
-	else if (p->mp[ptr->pc].v == 4)
-		ptr->cycle = 9;
-	else if (p->mp[ptr->pc].v == 5)
-		ptr->cycle = 9;
-	else if (p->mp[ptr->pc].v == 6)
-		ptr->cycle = 5;
-	else if (p->mp[ptr->pc].v == 7)
-		ptr->cycle = 5;
-	else if (p->mp[ptr->pc].v == 8)
-		ptr->cycle = 5;
-	else if (p->mp[ptr->pc].v == 9)
-		ptr->cycle = 19;
-	else if (p->mp[ptr->pc].v == 10)
-		ptr->cycle = 24;
-	else
-		pos_cycle2(p, ptr);
+	ptr->cycle = (p->op_tab[(p->mp[ptr->pc].v) - 1].cycles) - 1;
 }
 
 void	loop(t_env *p, int i, t_proc *ptr)
