@@ -6,7 +6,7 @@
 /*   By: gufortel <gufortel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/11 10:19:16 by Gufortel          #+#    #+#             */
-/*   Updated: 2019/01/27 18:04:05 by gufortel         ###   ########.fr       */
+/*   Updated: 2019/01/31 21:45:04 by gufortel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,7 @@ t_proc	*createproc(void);
 t_proc	*pushproc(t_proc **begin, int pc);
 t_proc	*pushprocfirst(t_proc **begin, int pc);
 void	delproc(t_proc **begin);
+void	clean_proc(t_proc **begin);
 
 /*
 ** erreur.c
@@ -229,4 +230,5 @@ void	aff(t_env *p, t_proc *c);
 */
 
 void	print_reg(t_env *p, t_proc *c, int adr, int val);
+
 #endif

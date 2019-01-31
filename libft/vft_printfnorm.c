@@ -6,7 +6,7 @@
 /*   By: gufortel <gufortel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/07 08:42:35 by gufortel          #+#    #+#             */
-/*   Updated: 2018/12/07 15:00:38 by gufortel         ###   ########.fr       */
+/*   Updated: 2019/01/31 22:47:02 by gufortel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,7 @@ int		vprintbuffer(t_var *ptr, char **str, int *nbr)
 	*nbr = *nbr + g_len;
 	*str = ft_strcat(*str, buffer);
 	del_t_var(&ptr);
+	ft_strdel(&buffer);
 	g_nbvar = 0;
 	return (g_len);
 }

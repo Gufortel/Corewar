@@ -6,7 +6,7 @@
 /*   By: gufortel <gufortel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/20 19:27:44 by gufortel          #+#    #+#             */
-/*   Updated: 2019/01/27 19:06:06 by gufortel         ###   ########.fr       */
+/*   Updated: 2019/01/31 23:21:36 by gufortel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,6 @@ void		or(t_env *p, t_proc *c)
 		&& p->mp[c->pc + 2].v <= REG_NUMBER) || get_00(p->mp[c->pc + 1].v) !=
 		1) ? 1 : 0;
 		c->carry = (tmp == 0) ? 1 : 0;
-		}
+	}
 	c->pc = c->pc + 3 + or2(p, c);
 }

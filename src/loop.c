@@ -6,7 +6,7 @@
 /*   By: gufortel <gufortel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/06 20:47:45 by gufortel          #+#    #+#             */
-/*   Updated: 2019/01/30 13:39:15 by gufortel         ###   ########.fr       */
+/*   Updated: 2019/02/01 00:12:24 by gufortel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,7 +74,7 @@ void	loop(t_env *p, int i, t_proc *ptr)
 				pos_cycle(p, ptr);
 			if (ptr->cycle == 0 && ptr->die == 0)
 				looploop(p, ptr);
-			ptr->cycle = ptr->cycle - 1; 
+			ptr->cycle = ptr->cycle - 1;
 			ptr = ptr->next;
 		}
 		if (i == 0)
@@ -83,9 +83,7 @@ void	loop(t_env *p, int i, t_proc *ptr)
 			life(p);
 		p->cycle = p->cycle + 1;
 		p->cycle_die = p->cycle_die + 1;
+		clean_proc(&p->begin);
 	}
-	if (p->cycle == p->dump)
-		dump_map(p);
-	else
-		winchamp(p);
+	(p->cycle == p->dump) ? dump_map(p) : winchamp(p);
 }

@@ -6,7 +6,7 @@
 /*   By: gufortel <gufortel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/11 15:25:57 by Gufortel          #+#    #+#             */
-/*   Updated: 2019/01/26 14:46:25 by gufortel         ###   ########.fr       */
+/*   Updated: 2019/01/31 22:41:33 by gufortel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ typedef struct		s_proc
 	int				reg[REG_NUMBER + 1];
 	int				nbdef; // position dans le tableau du champ + 1
 	int				cycle; //
-	int				live; // 
+	int				live; //
 	int				die;
 	int				pos_cycle;
 	char			taunt[10 + (1 * 2)];
@@ -67,7 +67,8 @@ typedef struct		s_env
 	t_proc			*begin;
 	t_map			mp[MEM_SIZE];
 	t_proc			*ptr; //exclusivement pour dump a ne pas toucher !!
-	char			*str;
+	t_op			*op_tab;
+	char			*str; //buffer de dump
 	int				cycle; //cycle actuel
 	int				live; //nombre de live
 	int				cycle_die; //cycle dans cycle to die
@@ -75,6 +76,5 @@ typedef struct		s_env
 	int				check; // nombre de verif
 	int				dump; // nombre de cycle max
 	int				nbplayers; // nombre de joueurs
-	t_op			*op_tab;
 }					t_env;
 #endif

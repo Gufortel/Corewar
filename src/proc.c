@@ -6,7 +6,7 @@
 /*   By: gufortel <gufortel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/13 10:55:00 by gufortel          #+#    #+#             */
-/*   Updated: 2019/01/21 18:21:29 by gufortel         ###   ########.fr       */
+/*   Updated: 2019/01/31 22:25:13 by gufortel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,26 @@ t_proc		*pushproc(t_proc **begin, int pc)
 	}
 	p->pc = pc;
 	return (p);
+}
+
+void		clean_proc(t_proc **begin)
+{
+	t_proc		*p;
+	t_proc		*pt;
+
+	pt = *begin;
+	p = pt->next;
+	while (p)
+	{
+		if (p->die == 1)
+		{
+			pt->next = p->next;
+			free(p);
+		}
+		else
+			pt = pt->next;
+		p = p->next;
+	}
 }
 
 t_proc		*pushprocfirst(t_proc **begin, int pc)

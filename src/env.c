@@ -6,7 +6,7 @@
 /*   By: gufortel <gufortel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/12 16:08:03 by Gufortel          #+#    #+#             */
-/*   Updated: 2019/01/19 17:57:10 by gufortel         ###   ########.fr       */
+/*   Updated: 2019/01/31 22:25:26 by gufortel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ void		delenv(t_env **p)
 
 	i = 0;
 	pt = *p;
-	while (i < MAX_PLAYERS)
+	while (i < pt->nbplayers)
 	{
 		if (pt->play[i])
 			delplay(&pt->play[i]);
@@ -40,6 +40,8 @@ void		delenv(t_env **p)
 		delproc(&pt->begin);
 	if (pt->str)
 		ft_strdel(&pt->str);
+	if (pt->op_tab)
+		free(pt->op_tab);
 	free(pt);
 	pt = NULL;
 }

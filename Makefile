@@ -6,7 +6,7 @@
 #    By: gufortel <gufortel@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/01/11 19:51:44 by gufortel          #+#    #+#              #
-#    Updated: 2019/01/27 18:04:45 by gufortel         ###   ########.fr        #
+#    Updated: 2019/01/31 23:46:40 by gufortel         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -84,7 +84,7 @@ OBJ = src/add.o\
 
 all: $(NAME)
 
-$(OBJ): $(SRC) 
+$(OBJ): $(SRC) ./includes/corewar.h ./includes/op.h ./includes/proto.h ./includes/struc.h 
 	@gcc -Wall -Wextra -Werror -c -O3 $(SRC)
 	@mv *.o ./src/
 
