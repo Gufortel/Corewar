@@ -6,7 +6,7 @@
 /*   By: gufortel <gufortel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/06 20:47:45 by gufortel          #+#    #+#             */
-/*   Updated: 2019/02/01 00:12:24 by gufortel         ###   ########.fr       */
+/*   Updated: 2019/02/05 19:03:24 by gufortel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,6 @@ void	looploop2(t_env *p, t_proc *ptr)
 		lldi(p, ptr);
 	else if (p->mp[ptr->pc].v == 15)
 		op_lfork(p, ptr);
-	else if (p->mp[ptr->pc].v == 16)
-		aff(p, ptr);
 }
 
 void	looploop(t_env *p, t_proc *ptr)

@@ -6,14 +6,13 @@
 #    By: gufortel <gufortel@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/01/11 19:51:44 by gufortel          #+#    #+#              #
-#    Updated: 2019/01/31 23:46:40 by gufortel         ###   ########.fr        #
+#    Updated: 2019/02/05 19:04:00 by gufortel         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = corewar_
 
 SRC = src/add.c\
-	src/aff.c\
 	src/and.c\
 	src/arg.c\
 	src/create_proc.c\
@@ -48,7 +47,6 @@ SRC = src/add.c\
 	src/print_reg.c\
 
 OBJ = src/add.o\
-	src/aff.o\
 	src/and.o\
 	src/arg.o\
 	src/create_proc.o\
