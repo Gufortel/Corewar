@@ -6,7 +6,7 @@
 /*   By: gufortel <gufortel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/12 16:32:03 by Gufortel          #+#    #+#             */
-/*   Updated: 2019/01/31 22:25:16 by gufortel         ###   ########.fr       */
+/*   Updated: 2019/02/12 20:09:03 by lmoreaux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ t_play		*createplay(char *name)
 		exit(-42);
 	p->name_file = ft_strdup(name);
 	p->nb = 1;
+	p->tnt = 0;
 	return (p);
 }
 

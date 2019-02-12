@@ -6,7 +6,7 @@
 /*   By: gufortel <gufortel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/11 10:19:16 by Gufortel          #+#    #+#             */
-/*   Updated: 2019/02/05 19:03:40 by gufortel         ###   ########.fr       */
+/*   Updated: 2019/02/12 21:13:59 by lmoreaux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -224,5 +224,12 @@ void	op_lfork(t_env *p, t_proc *c);
 */
 
 void	print_reg(t_env *p, t_proc *c, int adr, int val);
+
+/*
+** aff.c
+*/
+
+void	aff(t_env *p, t_proc *c);
+void	aff2(t_env *p, t_proc *c, int j);
 
 #endif

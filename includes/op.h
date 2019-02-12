@@ -6,13 +6,15 @@
 /*   By: gufortel <gufortel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/10/04 11:33:27 by zaz               #+#    #+#             */
-/*   Updated: 2019/01/31 23:15:36 by gufortel         ###   ########.fr       */
+/*   Updated: 2019/02/12 20:15:01 by lmoreaux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 /*
 ** Toutes les tailles sont en octets.
 ** On part du principe qu'un int fait 32 bits. Est-ce vrai chez vous ?
+** La syntaxe de l'op aff se fait comme ceci :
+** Pour colorer le texte : {LA COULEUR EN MAJUSCULE}
 */
 
 #ifndef OP_H

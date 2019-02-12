@@ -6,7 +6,7 @@
 /*   By: gufortel <gufortel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/11 15:25:57 by Gufortel          #+#    #+#             */
-/*   Updated: 2019/01/31 22:41:33 by gufortel         ###   ########.fr       */
+/*   Updated: 2019/02/12 20:46:22 by lmoreaux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,6 @@ typedef struct		s_proc
 	int				live; //
 	int				die;
 	int				pos_cycle;
-	char			taunt[10 + (1 * 2)];
 	struct s_proc	*next;
 }					t_proc;
 
@@ -51,7 +50,9 @@ typedef struct		s_play
 {
 	char			name[PROG_NAME_LENGTH + 1];
 	char			comment[COMMENT_LENGTH + 1];
+	char			taunt[102];
 	unsigned char	champ[CHAMP_MAX_SIZE + 1];
+	int				tnt; // position du char du taunt
 	int				len_champ; // taille champion
 	int				nb; //numero du champion accorde au lancement
 	int				nbdef; //possition dans play + 1
