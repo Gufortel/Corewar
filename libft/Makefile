@@ -6,7 +6,7 @@
 #    By: gufortel <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/11/10 00:01:50 by gufortel          #+#    #+#              #
-#    Updated: 2018/07/14 06:19:27 by gufortel         ###   ########.fr        #
+#    Updated: 2019/02/13 18:05:18 by gufortel         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -114,7 +114,7 @@ SRC = ft_atoi.c\
 
 OBJ = $(SRC:.c=.o)
 
-$(NAME): $(SRC)
+$(NAME): $(SRC) $(OBJ)
 	@gcc -Wall -Wextra -Werror -c $(SRC)
 	@ar rc $(NAME) $(OBJ)
 	@ranlib $(NAME)

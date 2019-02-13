@@ -6,7 +6,7 @@
 #    By: gufortel <gufortel@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/01/11 19:51:44 by gufortel          #+#    #+#              #
-#    Updated: 2019/02/13 17:36:54 by lmoreaux         ###   ########.fr        #
+#    Updated: 2019/02/13 18:28:19 by gufortel         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -87,6 +87,9 @@ all: $(NAME)
 $(OBJ): $(SRC) ./includes/corewar.h ./includes/op.h ./includes/proto.h ./includes/struc.h 
 	@gcc -Wall -Wextra -Werror -c -O3 $(SRC)
 	@mv *.o ./src/
+
+libft:
+	@make -C ./libft/ re
 
 $(NAME): $(OBJ)
 	@make -C ./libft/
