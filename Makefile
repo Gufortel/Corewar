@@ -6,7 +6,7 @@
 #    By: gufortel <gufortel@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/01/11 19:51:44 by gufortel          #+#    #+#              #
-#    Updated: 2019/02/05 19:04:00 by gufortel         ###   ########.fr        #
+#    Updated: 2019/02/13 17:36:54 by lmoreaux         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -45,6 +45,7 @@ SRC = src/add.c\
 	src/xor.c\
 	src/zjmp.c\
 	src/print_reg.c\
+	src/aff.c\
 
 OBJ = src/add.o\
 	src/and.o\
@@ -79,6 +80,7 @@ OBJ = src/add.o\
 	src/xor.o\
 	src/zjmp.o\
 	src/print_reg.o\
+	src/aff.o\
 
 all: $(NAME)
 
